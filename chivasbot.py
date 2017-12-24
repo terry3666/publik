@@ -9,15 +9,15 @@ cl.login(token="Eo5FENsuVEtI7PkK3YY2.WCCRkMNgQXINSOQNF/5yiG.3FWVOJlTPebtiyDGaRZ7
 cl.loginResult()
 
 kk =  LineAlpha.LINE()
-kk.login(token="EoxYKsNvY1B8LGmkVmZf.iC4lfEriEzKXeWEY6lQf+W.jPgs92NtejVbVNRBYPWAqb+b3OxLZKRVEsk/GrRBnc4=")
+kk.login(token="Eor6pUDuNRnMeB3n9zF1.6FEeUgZiJRekuif7AJkoyq.TndWJ9d2uSc9y+WhP66JOCPmK3fuJ7PT9Y4VzRgwskw=")
 kk.loginResult()
 
 ki =  LineAlpha.LINE()
-ki.login(token="EolJosq08pRjFvdh01Lf.AzOxSrYUoRO+s8R0wGFDNW.yGYmJgiM7hMnqWkvSVxrEHVEXl/H2yZrIXHE5dH4gFM=")
+ki.login(token="EondtHY3feI5YY4Epvrc.WU1DIxPO+PMAGO5zAJJf+a.WN+fQcflTr8pup8Ja9Cz77rVwQToNDfcg92QuGYVU+Q=")
 ki.loginResult()
 
 kc =  LineAlpha.LINE()
-kc.login(token="EoA6BlJy7Tujai9mpWS0.SIIDQHB+PWCP2bXYI9JK8a.3xqkolbpRfar7UWeke1jB+Bu/1jQXcGi/BL+A6HdbGQ=")
+kc.login(token="EoKFnF6NkaG3cvnQ4mN0.SIIDQHB+PWCP2bXYI9JK8a.ebKYAdlqexihzAyuxDCBUrwVB/Morg8fYXMqW8Om4BM=")
 kc.loginResult()
 
 print "login success"
