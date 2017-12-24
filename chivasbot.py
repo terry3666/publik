@@ -1468,17 +1468,6 @@ def bot(op):
 
        #--------------Fungsi Broadcast Finish-----------#
 #-----------------------------------------------
-            elif "Mid @" in msg.text: 
-	      if msg.from_ in owner: 
-		 _name = msg.text.replace("Mid @","") 
-		 _nametarget = _name.rstrip(' ') 
- 		 gs = cl.getGroup(msg.to) 
-		 lol ={'MENTION':str('{"MENTIONEES":'+json.dumps(zx2).replace(' ','')+'}')} 
-		 msg.contentMetadata = lol 
-		 for g in gs.members: 
-		 if _nametarget == g.displayName: 
-		 random.choice(KAC).sendText(msg.to,"Mid:\n" + msg + g.mid) 
-	      else: 
 #-------------------------------------------------------
             elif 'XpertCrash' in msg.text:
               if msg.from_ in admin:
