@@ -688,11 +688,6 @@ def bot(op):
                         cl.updateGroup(x)
                     gurl = cl.reissueGroupTicket(msg.to)
                     cl.sendText(msg.to,"line://ti/g/" + gurl)
-                else:
-                    if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"Can't be used outside the group")
-                    else:
-                        cl.sendText(msg.to,"Not for use less than group")
             elif msg.text in ["Curl","Link off"]:
                 if msg.toType == 2:
                     X = cl.getGroup(msg.to)
@@ -702,11 +697,6 @@ def bot(op):
                         cl.sendText(msg.to,"Done")
                     else:
                         cl.sendText(msg.to,"already close")
-                else:
-                    if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"Can not be used outside the group")
-                    else:
-                        cl.sendText(msg.to,"Not for use less than group")
          #----------------Fungsi Join Group Start-----------------------#
             elif msg.text in ["Y"]:
               if msg.from_ in admin:
