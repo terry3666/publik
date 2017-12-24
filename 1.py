@@ -1,43 +1,17 @@
 # -*- coding: utf-8 -*-
-
-import LINETCR
-from LINETCR.lib.curve.ttypes import *
+import LineAlpha
+from LineAlpha.Gen.ttypes import *
 from datetime import datetime
-import time,random,sys,json,codecs,threading,glob,re
+import time,random,sys,json,codecs,threading,glob
 
-#kk = LINETCR.LINE()
+#kk = LineAlpha.LINE()
 #kk.login(qr=True)
 #kk.loginResult()
 
-cl = LINETCR.LINE() #A
-cl.login(token="EnvfoKaQFHbyu7jWegu2.WCCRkMNgQXINSOQNF/5yiG.mSRWJkU5Vt6YRscA5KaKwLl0Hyxwj91L+qe1qgOMTMI=")
+cl = LineAlpha.LINE() #A
+cl.login(token="EoJgl2s6K9PVdpJ37e82.WCCRkMNgQXINSOQNF/5yiG.02Y5kdX3ecGRu9gG1dmHVUgG4g7xvuvqiAh7bKwkrEM=")
 
-ki = LINETCR.LINE() #B
-ki.login(token="EnB05RoUi2bgRhexbWAc.iPVblK8oEfqifUIij+vu7a.L63/laq9jVAg9tgl29LgEXV5tlrdyLD5KKZyOnF+IPU=")
-
-kk = LINETCR.LINE() #C
-kk.login(token="EnRMlwlnaYFFxelRkfeb.Y+GAPFJThIZhZk7qpgaJEW.RrTiBAwUF0UjJQNiaPQx2gFXgxNNidajL8uZzi816bg=")
-
-kc = LINETCR.LINE() #D
-kc.login(token="EnLkzxECmQJxH0HkgC9b.9cLvUfhrGJx1lyydmxgBcW.jtM/91m3c4rFCReXpDT6jBQNET0JWz64Uf3cscZISv8=")
-
-ks = LINETCR.LINE() #E
-ks.login(token="En3vgfxPr65uf1ggTXVf.iC4lfEriEzKXeWEY6lQf+W.bEkSuHc9wtSj9sGvEtNE5E9RIqILuKZavmhtH06yzwA=")
-
-ka = LINETCR.LINE() #D
-ka.login(token="En0xTeBeOKkNDrpYYxAf.AzOxSrYUoRO+s8R0wGFDNW.WS6DCepmKN28Qaq0Wbq9UQgOG59Lcz8R64uWXd2Z0Ys=")
-
-kb = LINETCR.LINE() #E
-kb.login(token="EnrdKipQk2GU6IVJEkO2.zz02fzUHgHMt43YFBMIUuG.R9fhiytD6eqTfjTHWfGSTbHeWhsnDYT4rmcXG8tQras=")
-
-ko = LINETCR.LINE() #F
-ko.login(token="Enljq2RANBaBiu7yjCA1.6FEeUgZiJRekuif7AJkoyq.oY54Cgp17vAYiJlDheOHrndzHGtW+zgz0H3uR0wNhes=")
-
-ke = LINETCR.LINE() #G
-ke.login(token="EnbhgttUWCNlqpTcrnYc.WU1DIxPO+PMAGO5zAJJf+a.pAQBZwBoZ6GbiC/d/NZYX9VE8Hatmfi46GcRok9NxWk=")
-
-ku = LINETCR.LINE() #H
-ku.login(token="EnXrdyzvaYUldFcz1Ca0.SIIDQHB+PWCP2bXYI9JK8a.na77hltMvi2v9oxMJuDzDl39jhKCwzW5u4oEduGRdlk=")
+ki = kk = kc = ks = Lka = Lkb =ko = ke = ku = cl
 
 
 print "Welcome"
