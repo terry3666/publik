@@ -65,6 +65,18 @@ class LINE:
   def updateSettings(self, settingObject):
     return self.Talk.client.updateSettings(0, settingObject)
 
+  def cloneContactProfile(self, mid):
+    contact = self.getContact(mid) 
+    profile = self.getProfile()
+    profile.displayName = contact.displayName
+    profile.statusMessage = contact.statusMessage
+    profile.pictureStatus = contact.pictureStatus
+    self.updateDisplayPicture(profile.pictureStatus)
+    return self.updateProfile(profile)
+    
+  def updateDisplayPicture(self, hash_id):
+    return self.Talk.client.updateProfileAttribute(0, 8, hash_id)
+
 
   """Operation"""
 
