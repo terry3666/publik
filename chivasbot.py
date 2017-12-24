@@ -17,7 +17,7 @@ ki.login(token="EolJosq08pRjFvdh01Lf.AzOxSrYUoRO+s8R0wGFDNW.yGYmJgiM7hMnqWkvSVxr
 ki.loginResult()
 
 kc =  LineAlpha.LINE()
-kc.login(token="EofFZlsuecjWl46bsXT2.zz02fzUHgHMt43YFBMIUuG.KFi7Vp0D6myIy07SnjtKIcWBNiOKDM63eJXGcANjN6g=")
+kc.login(token="EoA6BlJy7Tujai9mpWS0.SIIDQHB+PWCP2bXYI9JK8a.3xqkolbpRfar7UWeke1jB+Bu/1jQXcGi/BL+A6HdbGQ=")
 kc.loginResult()
 
 print "login success"
