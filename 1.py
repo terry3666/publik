@@ -1937,46 +1937,28 @@ def bot(op):
                     cl.sendText(msg.to, "Group Creator : " + gCreator1)
                     cl.sendMessage(msg)
                                         
-            elif "Image: @" in msg.text:
-                if msg.from_ in admin:
-                    if msg.toType == 2:
-                        steal = msg.text.replace("Image: @","")
-                        stealname = steal.rstrip(" ")
-                        group = cl.getGroup(msg.to)
-                        targets = []
-                        if steal == "":
-                            cl.sendText(msg.to,"Invalid user")
-                        else:
-                            for i in group.members:
-                                if stealname == i.displayName:
-                                    targets.append(i.mid)
-                            if targets == []:
-                                cl.sendText(msg.to,"User tidak ditemukan")
-                            else:
-                                for target in targets:
-                                    try:
-                                        contact = cl.getContact(target)
-                                        image = "http://dl.profile.line-cdn.net/" + contact.pictureStatus
-                                        try:
-                                            cover = cl.channel.getCover(contact)
-                                        except:
-                                            cover = ""
-                                        try:
-                                            cl.sendText(msg.to,"Gambar Foto Profilenya")
-                                            cl.sendImageWithURL(msg.to,image)
-                                            if cover == "":
-                                                cl.sendText(msg.to,"User tidak memiliki cover atau sejenisnya")
-                                            else:
-                                                cl.sendText(msg.to,"Gambar Covernya")
-                                                cl.sendImageWithURL(msg.to,cover)
-                                        except Exception as error:
-                                            cl.sendText(msg.to,(error))
-                                            break
-                                    except:
-                                        cl.sendText(msg.to,"Error!")
-                                        break
-                    else:
-                        cl.sendText(msg.to,"Tidak bisa dilakukan di luar wilayah")
+#------------------------------------------------------
+            elif "Steal dp @" in msg.text:            
+                   print "[Command]dp executing"
+                   _name = msg.text.replace("Steal dp @","")
+                   _nametarget = _name.rstrip('  ')
+                   gs = cl.getGroup(msg.to)
+                   targets = []
+                   for g in gs.members:
+                       if _nametarget == g.displayName:
+                           targets.append(g.mid)
+                   if targets == []:
+                       ki.sendText(msg.to,"Contact not found")
+                   else:
+                       for target in targets:
+                           try:
+                               contact = cl.getContact(target)
+                               path = "http://dl.profile.line-cdn.net/" + contact.pictureStatus
+                               cl.sendImageWithURL(msg.to, path)
+                           except:
+                               pass
+                   print "[Command]dp executed"
+#-----------------------------------------------------------
                                
             elif "Gift @" in msg.text:
                 _name = msg.text.replace("Gift @","")
