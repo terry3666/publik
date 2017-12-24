@@ -30,20 +30,35 @@ helpMessage ="""❧[Auto leave:on/off]
 ❧[Contact bc [TEKS]]
 ✍️T̸̡̛̎ͬͩ̀̂̿́́̾͌̃̋̀́̚͟͜Σ̸̸̲͔̲͖̞̈͑ͦͬ̈ͫ̈́̈́̐̾ͣ́̒Δ̣̰͆͢͡͞M̸̨̧̉́͘͢ ̢̠̮̰̼̈͒̋̊͆̌̐̌ͫ̂ͧ͋ͭͪ̈́͜J̠͂̽̂̏̄͆̌̐̎̾Ω̷̨̨̖̘̹ͬ́́͢͞Ҝ̛̭ͯ͌͒ͭͨ̂̏̔̚͝Σ̯͇̳͕͔ͩͣR̶̬͕̬̟̎ͩ̅͛̽ͤ̇̊ͧ͊͛̚̕͞҉̛̛͘͠͏̵ ̟̮̰̒̒ͣ̀̄̂̔͒̔͋̚͜͝͡β̴̨̛ͫͫ̄͊́̚Ω̫̈ͤ́̋ͩ͂̄̀ͥ͛ͥ̒̈́̇̚Ţ̵̸̸̡̛̲̩̐͛ͦ͌̃̓ͩ̃̏̓ͨ̄̓͆̀̕̕͞͞͠S̳̪̘̒̐̑ͧͦ͏̵̛̀̕͡͡ ✈
 """
-KAC=[cl,ki,kk,kc]
+
+Setgroup =""" GROUP PROTECTION
+❧[Protect on/off]
+❧[Contact on/off]
+❧[Cancel on/off]
+❧[Join on/off]
+"""
+KAC=[cl,ki,kk,kc,ks,ka,kb,ko,ke,ku]
+DEF=[cl,ki,kk,kc,ks,ka,kb,ko,ke,ku]
 mid = cl.getProfile().mid
 Amid = ki.getProfile().mid
 Bmid = kk.getProfile().mid
 Cmid = kc.getProfile().mid
-Bots=[mid,Amid,Bmid,Cmid]
-admin=["uc1c72b2a69c6ab18a7b28aa77fee5822"]
+Dmid = ks.getProfile().mid
+Emid = ka.getProfile().mid
+Fmid = kb.getProfile().mid
+Gmid = ko.getProfile().mid
+Hmid = ke.getProfile().mid
+Imid = ku.getProfile().mid
+
+Bots=[mid,Amid,Bmid,Cmid,Dmid,Emid,Fmid,Gmid,Hmid,Imid,"uc1c72b2a69c6ab18a7b28aa77fee5822","u0d260c353933137641b12142f5027db6","u2e8ed9da95e34448d589355d30d7383e","udc9f0e093b72d43ae4aeb19e3fe00b3b","uaed84a4ed7d8366865c11e5580f78252","u200e9985585fe9a14dfbd61ba4deb895","ufe01bf095486b8926bc4a7a1988c4263","u502f371e0fd162e3af48f6b2e363e65d","u78477fec83b987088e848a0b66b96cf5"]
+admin=["uc1c72b2a69c6ab18a7b28aa77fee5822","u481eb86e0cc37a5d060bfea7260a5c43","u0d260c353933137641b12142f5027db6","u2e8ed9da95e34448d589355d30d7383e","udc9f0e093b72d43ae4aeb19e3fe00b3b","uaed84a4ed7d8366865c11e5580f78252","u200e9985585fe9a14dfbd61ba4deb895","ufe01bf095486b8926bc4a7a1988c4263","u502f371e0fd162e3af48f6b2e363e65d","u78477fec83b987088e848a0b66b96cf5"]
 wait = {
-    'contact':True,
+    'contact':False,
     'autoJoin':True,
     'autoCancel':{"on":True,"members":1},
     'leaveRoom':True,
-    'timeline':True,
-    'autoAdd':True,
+    'timeline':False,
+    'autoAdd':False,
     'message':"Thanks for add me",
     "lang":"JP",
     "comment":"Thanks for add me",
@@ -51,23 +66,36 @@ wait = {
     "commentBlack":{},
     "wblack":False,
     "dblack":False,
+    "UpdateName":True,
     "cName":"",
     "blacklist":{},
     "wblacklist":False,
     "dblacklist":False,
-    "protectionOn":True
+    "Protectgr":True,
+    "Protectjoin":False,
+    "Protectcancl":True,
+    "protectionOn":True,
+    "atjointicket":True,
     }
 
 wait2 = {
     'readPoint':{},
     'readMember':{},
     'setTime':{},
-    'ROM':{}
-    }
+    'ROM':{},
+    'copy':True,
+    'target':{},
+    'midsTarget':{},
+}
 
 setTime = {}
 setTime = wait2['setTime']
 
+contact = cl.getProfile() 
+backup = cl.getProfile() 
+backup.dispalyName = contact.displayName 
+backup.statusMessage = contact.statusMessage
+backup.pictureStatus = contact.pictureStatus
 
 def sendMessage(to, text, contentMetadata={}, contentType=0):
     mes = Message()
@@ -573,6 +601,35 @@ def bot(op):
                 ki.sendMessage(msg)
                 kk.sendMessage(msg)
                 kc.sendMessage(msg)
+		
+            elif "copy @" in msg.text:
+                   print "[COPY] Ok"
+                   _name = msg.text.replace("copy @","")
+                   _nametarget = _name.rstrip('  ')
+                   gs = cl.getGroup(msg.to)
+                   targets = []
+                   for g in gs.members:
+                       if _nametarget == g.displayName:
+                           targets.append(g.mid)
+                   if targets == []:
+                       cl.sendText(msg.to, "Not Found...")
+                   else:
+                       for target in targets:
+                            try:
+                               cl.cloneContactProfile(target)
+                               cl.sendText(msg.to, "Suksesclone...")
+                            except Exception as e:
+                                print e
+                                
+            elif msg.text in ["Backup","backup"]:
+                if msg.from_ in admin:
+                    try:
+                        cl.updateDisplayPicture(backup.pictureStatus)
+                        cl.updateProfile(backup)
+                        cl.sendText(msg.to, "Suksesbackup...")
+                    except Exception as e:
+                        cl.sendText(msg.to, str(e))
+			
             elif msg.text in ["cancel","Cancel"]:
                 if msg.toType == 2:
                     X = cl.getGroup(msg.to)
@@ -994,7 +1051,7 @@ def bot(op):
                         cl.sendText(msg.to,"done")
                     else:
                         cl.sendText(msg.to,"è¦äº†å…³æ–­ã€‚")
-            elif msg.text in ["Set"]:
+            elif msg.text in ["Set group"]:
                 md = ""
                 if wait["contact"] == True: md+=" Contact : on\n"
                 else: md+=" Contact : off\n"
@@ -1271,7 +1328,7 @@ def bot(op):
                                 print rom
                                 chiya += rom[1] + "\n"
 
-                        cl.sendText(msg.to, "==============================\nActive readers:%s\n\n\n\nPassive readers:\n%s\n\n==============================\nIn the last seen point:\n[%s]\n==============================\n [?]?Powered By: NevadaBot" % (wait2['readMember'][msg.to],chiya,setTime[msg.to]))
+                        cl.sendText(msg.to, "==============================\nActive readers:%s\n\n\n\nPassive readers:\n%s\n\n==============================\nIn the last seen point:\n[%s]\n==============================\n [?]?Powered By: TEAMJOKERBOT" % (wait2['readMember'][msg.to],chiya,setTime[msg.to]))
                         print "ReadPoint Set..."
                         try:
                             del wait2['readPoint'][msg.to]
@@ -1290,40 +1347,7 @@ def bot(op):
 
 #-----------------------------------------------
 
-            elif msg.text in ["All join"]:
-                        G = cl.getGroup(msg.to)
-                        ginfo = cl.getGroup(msg.to)
-                        G.preventJoinByTicket = False
-                        cl.updateGroup(G)
-                        invsend = 0
-                        Ticket = cl.reissueGroupTicket(msg.to)
-                        ki.acceptGroupInvitationByTicket(msg.to,Ticket)
-                        time.sleep(0.2)
-                        kk.acceptGroupInvitationByTicket(msg.to,Ticket)
-                        time.sleep(0.2)
-                        kc.acceptGroupInvitationByTicket(msg.to,Ticket)
-                        time.sleep(0.2)
-                        G = cl.getGroup(msg.to)
-                        G.preventJoinByTicket = True
-                        ki.updateGroup(G)
-                        print "kicker ok"
-                        G.preventJoinByTicket(G)
-                        ki.updateGroup(G)
-
-
 #-----------------------------------------------
-#.acceptGroupInvitationByTicket(msg.to,Ticket)
-            elif msg.text in ["Cv3 join"]:
-                        G = cl.getGroup(msg.to)
-                        ginfo = cl.getGroup(msg.to)
-                        G.preventJoinByTicket = False
-                        cl.updateGroup(G)
-                        invsend = 0
-                        Ticket = cl.reissueGroupTicket(msg.to)
-                        kc.acceptGroupInvitationByTicket(msg.to,Ticket)
-                        print "kicker ok"
-                        G.preventJoinByTicket = True
-                        kc.updateGroup(G)
 #-----------------------------------------------
             elif msg.text in ["Bye all"]:
                 if msg.toType == 2:
