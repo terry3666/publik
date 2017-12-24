@@ -671,7 +671,7 @@ def bot(op):
                             cl.sendText(msg.to,"No one is inviting")
                         else:
                             cl.sendText(msg.to,"Sorry, nobody absent")
-                else:
+                    else:
                     if wait["lang"] == "JP":
                         cl.sendText(msg.to,"Can not be used outside the group")
                     else:
