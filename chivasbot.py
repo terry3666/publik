@@ -85,7 +85,7 @@ wait2 = {
     'readPoint':{},
     'readMember':{},
     'setTime':{},
-    'ROM':{}
+    'ROM':{},
     'copy':True,
     'target':{},
     'midsTarget':{},
