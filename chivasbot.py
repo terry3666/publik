@@ -114,6 +114,24 @@ def bot(op):
                     pass
                 else:
                     cl.sendText(op.param1,str(wait["message"]))
+		
+        #------CCTV-------------===----------#
+        if op.type == 55:
+          try:
+            if op.param1 in wait2['readPoint']:
+              Name = cl.getContact(op.param2).displayName
+              if Name in wait2['readMember'][op.param1]:
+                 pass
+              else:
+                wait2['readMember'][op.param1] += "\n[•]" + Name
+                wait2['ROM'][op.param1][op.param2] = "[•]" + Name
+            else:
+              cl.sendText
+          except:
+             pass
+
+        #-----------------------------------#
+		
         if op.type == 13:
                 if op.param3 in mid:
                     if op.param2 in Amid:
@@ -1300,6 +1318,7 @@ def bot(op):
                         print wait2
                         
             elif msg.text == "Result":
+                if msg.toType == 2:
                     if msg.to in wait2['readPoint']:
                         if wait2["ROM"][msg.to].items() == []:
                             chiya = ""
@@ -1309,7 +1328,19 @@ def bot(op):
                                 print rom
                                 chiya += rom[1] + "\n"
 
-                        cl.sendText(msg.to, "==============================\nActive readers:%s\n\n\n\nPassive readers:\n%s\n\n==============================\nIn the last seen point:\n[%s]\n==============================\n [?]?Powered By: TEAMJOKERBOT" % (wait2['readMember'][msg.to],chiya,setTime[msg.to]))
+                        cl.sendText(msg.to, "==============================\nActive readers:%s\n\n\n\nPassive readers:\n%s\n\n==============================\nIn the last seen point:\n[%s]\n==============================\n [?]?Powered By: JOKERTEAMBOT" % (wait2['readMember'][msg.to],chiya,setTime[msg.to]))
+                        print "ReadPoint Set..."
+                        try:
+                            del wait2['readPoint'][msg.to]
+                            del wait2['readMember'][msg.to]
+                        except:
+                            pass
+                        wait2['readPoint'][msg.to] = msg.id
+                        wait2['readMember'][msg.to] = ""
+                        wait2['setTime'][msg.to] = datetime.datetime.today().strftime('%Y-%m-%d %H:%M:%S')
+                        wait2['ROM'][msg.to] = {}
+                        print wait
+                        cl.sendText(msg.to, "Auto set reading point in:" + datetime.datetime.today().strftime('\n%Y-%m-%d %H:%M:%S'))
                     else:
                         cl.sendText(msg.to, "Reading point has not been set.")
 #-----------------------------------------------
