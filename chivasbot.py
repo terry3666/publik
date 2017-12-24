@@ -5,7 +5,7 @@ from datetime import datetime
 import time,random,sys,json,codecs,threading,glob
 
 cl = LineAlpha.LINE()
-cl.login(token="EoFyTN5cuZusJzlrvi82.WCCRkMNgQXINSOQNF/5yiG.YNh0Cv1TdVqgkNEbIvsgeRJNa99LJD9CeieE+vum3PM=")
+cl.login(token="Eo5FENsuVEtI7PkK3YY2.WCCRkMNgQXINSOQNF/5yiG.3FWVOJlTPebtiyDGaRZ7zLkc0F4UQ7aCyDYwhoWwnnA=")
 cl.loginResult()
 
 kk =  LineAlpha.LINE()
