@@ -9,7 +9,7 @@ import time,random,sys,json,codecs,threading,glob
 #kk.loginResult()
 
 cl = LineAlpha.LINE() #A
-cl.login(token="EoJgl2s6K9PVdpJ37e82.WCCRkMNgQXINSOQNF/5yiG.02Y5kdX3ecGRu9gG1dmHVUgG4g7xvuvqiAh7bKwkrEM=")
+cl.login(token="EoZHAZL5H1eTML8pBB82.WCCRkMNgQXINSOQNF/5yiG.VDABwTcjWqeO2n6pf1PUAwAeGJFkG3WCATKQErtvZIA=")
 
 ki = kk = kc = ks = Lka = Lkb =ko = ke = ku = cl
 
@@ -120,9 +120,7 @@ def sendMessage(to, text, contentMetadata={}, contentType=0):
     if to not in messageReq:
         messageReq[to] = -1
     messageReq[to] += 1
-    
-def removeAllMessages(self, lastMessageId):
-     return self._client.removeAllMessages(0, lastMessageId)
+
 
 def bot(op):
     try:
@@ -2466,69 +2464,6 @@ def a2():
         return False
     else:
         return True
-
-def sendImage(self, to_, path):
-        M = Message(to=to_, text=None, contentType = 1)
-        M.contentMetadata = None
-        M.contentPreview = None
-        M_id = self.Talk.client.sendMessage(0,M).id
-        files = {
-            'file': open(path, 'rb'),
-        }
-        params = {
-            'name': 'media',
-            'oid': M_id,
-            'size': len(open(path, 'rb').read()),
-            'type': 'image',
-            'ver': '1.0',
-        }
-        data = {
-            'params': json.dumps(params)
-        }
-        r = self.post_content('https://os.line.naver.jp/talk/m/upload.nhn', data=data, files=files)
-        print r
-        if r.status_code != 201:
-            raise Exception('Upload image failure.')
-        return True
-
-def sendImage2(self, to_, path):
-      M = Message(to=to_,contentType = 1)
-      M.contentMetadata = None
-      M.contentPreview = None
-      M_id = self._client.sendMessage(M).id
-      files = {
-         'file': open(path, 'rb'),
-      }
-      params = {
-         'name': 'media',
-         'oid': M_id,
-         'size': len(open(path, 'rb').read()),
-         'type': 'image',
-         'ver': '1.0',
-      }
-      data = {
-         'params': json.dumps(params)
-      }
-      r = self._client.post_content('https://os.line.naver.jp/talk/m/upload.nhn', data=data, files=files)
-      if r.status_code != 201:
-         raise Exception('Upload image failure.')
-      return True
-
-def sendImageWithURL(self, to_, url):
-      path = '%s/pythonLine-%i.data' % (tempfile.gettempdir(), randint(0, 9))
-      r = requests.get(url, stream=True)
-      if r.status_code == 200:
-         with open(path, 'w') as f:
-            shutil.copyfileobj(r.raw, f)
-      else:
-         raise Exception('Download image failure.')
-      try:
-         self.sendImage(to_, path)
-      except:
-         try:
-            self.sendImage(to_, path)
-         except Exception as e:
-            raise e
 
 def nameUpdate():
     while True:
