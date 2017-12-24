@@ -5,10 +5,10 @@ from datetime import datetime
 import time,random,sys,json,codecs,threading,glob
 
 cl = LineAlpha.LINE()
-cl.login(token="EonwE6poxC9aZhdFiGt2.WCCRkMNgQXINSOQNF/5yiG.bKw08jfgUahQiuRU3k4HbEDrTffZeZcaNAI4kEyaaZI=")
+cl.login(token="EoCfmgR3hugfO9Px1Zl2.WCCRkMNgQXINSOQNF/5yiG.+afeq+lgW84UCMuCdUI6PQwWmmWSeh8hgtgSmdC+jYQ=")
 cl.loginResult()
 
-kk = ki = kc = = cl
+kk = ki = kc = cl
 print "login success"
 reload(sys)
 sys.setdefaultencoding('utf-8')
@@ -37,28 +37,20 @@ Setgroup =""" GROUP PROTECTION
 ❧[Cancel on/off]
 ❧[Join on/off]
 """
-KAC=[cl,ki,kk,kc,ks,ka,kb,ko,ke,ku]
-DEF=[cl,ki,kk,kc,ks,ka,kb,ko,ke,ku]
+KAC=[cl,ki,kk,kc]
 mid = cl.getProfile().mid
 Amid = ki.getProfile().mid
 Bmid = kk.getProfile().mid
 Cmid = kc.getProfile().mid
-Dmid = ks.getProfile().mid
-Emid = ka.getProfile().mid
-Fmid = kb.getProfile().mid
-Gmid = ko.getProfile().mid
-Hmid = ke.getProfile().mid
-Imid = ku.getProfile().mid
-
-Bots=[mid,Amid,Bmid,Cmid,Dmid,Emid,Fmid,Gmid,Hmid,Imid,"uc1c72b2a69c6ab18a7b28aa77fee5822","u0d260c353933137641b12142f5027db6","u2e8ed9da95e34448d589355d30d7383e","udc9f0e093b72d43ae4aeb19e3fe00b3b","uaed84a4ed7d8366865c11e5580f78252","u200e9985585fe9a14dfbd61ba4deb895","ufe01bf095486b8926bc4a7a1988c4263","u502f371e0fd162e3af48f6b2e363e65d","u78477fec83b987088e848a0b66b96cf5"]
-admin=["uc1c72b2a69c6ab18a7b28aa77fee5822","u481eb86e0cc37a5d060bfea7260a5c43","u0d260c353933137641b12142f5027db6","u2e8ed9da95e34448d589355d30d7383e","udc9f0e093b72d43ae4aeb19e3fe00b3b","uaed84a4ed7d8366865c11e5580f78252","u200e9985585fe9a14dfbd61ba4deb895","ufe01bf095486b8926bc4a7a1988c4263","u502f371e0fd162e3af48f6b2e363e65d","u78477fec83b987088e848a0b66b96cf5"]
+Bots=[mid,Amid,Bmid,Cmid]
+admin=["YOUR_MID_HERE"]
 wait = {
-    'contact':False,
+    'contact':True,
     'autoJoin':True,
     'autoCancel':{"on":True,"members":1},
     'leaveRoom':True,
-    'timeline':False,
-    'autoAdd':False,
+    'timeline':True,
+    'autoAdd':True,
     'message':"Thanks for add me",
     "lang":"JP",
     "comment":"Thanks for add me",
@@ -66,30 +58,20 @@ wait = {
     "commentBlack":{},
     "wblack":False,
     "dblack":False,
-    "UpdateName":True,
+    "clock":True,
     "cName":"",
     "blacklist":{},
     "wblacklist":False,
     "dblacklist":False,
-    "Protectgr":True,
-    "Protectjoin":False,
-    "Protectcancl":True,
-    "protectionOn":True,
-    "atjointicket":True,
+    "protectionOn":True
     }
 
 wait2 = {
     'readPoint':{},
     'readMember':{},
     'setTime':{},
-    'ROM':{},
-    'copy':True,
-    'target':{},
-    'midsTarget':{},
-}
-
-setTime = {}
-setTime = wait2['setTime']
+    'ROM':{}
+    }
 
 contact = cl.getProfile() 
 backup = cl.getProfile() 
