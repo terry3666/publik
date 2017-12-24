@@ -1512,7 +1512,7 @@ def bot(op):
 #-----------------------------------------------
 #-----------------------------------------------
 #------------------------------------------------------#
-             elif msg.text in ["d"]:
+            elif msg.text in ["UpdateName"]:
               if msg.from_ in admin:
                if wait["UpdateName"] == True:
                 profile = cl.getProfile()
