@@ -661,17 +661,19 @@ def bot(op):
                     except Exception as e:
                         cl.sendText(msg.to, str(e))
 			
-            elif msg.text in ["cancel","Cancel"]:
+            elif msg.text in ["Cancel","cancel"]:
+              if msg.from_ in admin:
+                if msg.toType == 2:
                     X = cl.getGroup(msg.to)
                     if X.invitee is not None:
                         gInviMids = [contact.mid for contact in X.invitee]
                         cl.cancelGroupInvitation(msg.to, gInviMids)
                     else:
                         if wait["lang"] == "JP":
-                            cl.sendText(msg.to,"No one is inviting")
+                            cl.sendText(msg.to,"Tidak ada")
                         else:
-                            cl.sendText(msg.to,"Sorry, nobody absent")
-                    else:
+                            cl.sendText(msg.to,"Sukses")
+                else:
                     if wait["lang"] == "JP":
                         cl.sendText(msg.to,"Can not be used outside the group")
                     else:
