@@ -85,7 +85,10 @@ wait2 = {
     'readMember':{},
     'setTime':{},
     'ROM':{}
-    }
+}
+
+setTime = {}
+setTime = wait2['setTime']
 
 contact = cl.getProfile() 
 backup = cl.getProfile() 
