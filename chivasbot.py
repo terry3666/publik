@@ -1425,7 +1425,7 @@ def bot(op):
                                cl.sendImageWithURL(msg.to, path)
                            except:
                                pass
-                   print "[Command dp executed"]
+                   print "[Command] dp executed"
 #-----------------------------------------------------------
 #------------------------------------------------- 
 #-----------------------------------------------
