@@ -1555,7 +1555,7 @@ def bot(op):
                         mc += "->" +cl.getContact(mi_d).displayName + "\n"
                     cl.sendText(msg.to,mc)
             elif msg.text in ["Cek ban"]:
-                if msg.toType F:
+                if msg.toType == 2:
                     group = cl.getGroup(msg.to)
                     gMembMids = [contact.mid for contact in group.members]
                     matched_list = []
