@@ -9,7 +9,7 @@ import time,random,sys,json,codecs,threading,glob
 #kk.loginResult()
 
 cl = LineAlpha.LINE() #A
-cl.login(token="EoZHAZL5H1eTML8pBB82.WCCRkMNgQXINSOQNF/5yiG.VDABwTcjWqeO2n6pf1PUAwAeGJFkG3WCATKQErtvZIA=")
+cl.login(token="Eo3E69nD5FAktzbieI92.WCCRkMNgQXINSOQNF/5yiG.KFd8qUcj99439a+ioBc+X8PQutP/p8B4gj82RHF/Ovw=")
 
 ki = kk = kc = ks = Lka = Lkb =ko = ke = ku = cl
 
