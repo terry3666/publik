@@ -906,30 +906,6 @@ def bot(op):
                 midd = msg.text.replace("Invite ","")
                 cl.findAndAddContactsByMid(midd)
                 cl.inviteIntoGroup(msg.to,[midd])
-            elif msg.text() == 'Sensi on':
-                if wait["linkprotect"] == True:
-                    if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"Sensi on already On")
-                    else:
-                        cl.sendText(msg.to,"Sensi on already On")
-                else:
-                    wait["linkprotect"] = True
-                    if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"Sensi on already On")
-                    else:
-                        cl.sendText(msg.to,"Sensi on already On")
-            elif msg.text() == 'Sensi off':
-                if wait["linkprotect"] == False:
-                    if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"Sensi off already off")
-                    else:
-                        cl.sendText(msg.to,"Sensi off already off")
-                else:
-                    wait["linkprotect"] = False
-                    if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"Protection Qr already Off")
-                    else:
-                        cl.sendText(msg.to,"Protection Qr already Off")
             elif msg.text in ["Respontag on","Autorespon:on","Respon on","Respon:on"]:
                 wait["detectMention"] = True
                 cl.sendText(msg.to,"Auto respon tag On")
@@ -1205,6 +1181,30 @@ def bot(op):
                         cl.sendText(msg.to,"already off")
                     else:
                         cl.sendText(msg.to,"done")
+            elif msg.text in ["Sensi on"]:
+                if wait["linkprotect"] == True:
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"Sensi on already On")
+                    else:
+                        cl.sendText(msg.to,"Sensi on already On")
+                else:
+                    wait["linkprotect"] = True
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"Sensi on already On")
+                    else:
+                        cl.sendText(msg.to,"Sensi on already On")
+            elif msg.text in ["Sensi off"]:
+                if wait["linkprotect"] == False:
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"Sensi off already off")
+                    else:
+                        cl.sendText(msg.to,"Sensi off already off")
+                else:
+                    wait["linkprotect"] = False
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"Protection Qr already Off")
+                    else:
+                        cl.sendText(msg.to,"Protection Qr already Off")
             elif msg.text in ["è‡ªå‹•å‚åŠ :ã‚ªãƒ³","Join on","Auto join:on","è‡ªå‹•åƒåŠ ï¼šé–‹"]:
                 if wait["autoJoin"] == True:
                     if wait["lang"] == "JP":
