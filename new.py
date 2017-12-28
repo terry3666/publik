@@ -92,7 +92,7 @@ wait = {
     'contact':False,
     'autoJoin':False,
     'autoCancel':{"on":True,"members":1},
-    'leaveRoom'False,
+    'leaveRoom':False,
     'timeline':False,
     'autoAdd':False,
     'message':"Hmmm ngeadd",
