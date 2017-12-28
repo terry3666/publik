@@ -802,8 +802,8 @@ def bot(op):
                  if wait["detectMention"] == True:
                      contact = cl.getContact(msg.from_)
                      cName = contact.displayName
-                     balas = ["sibuk..Ngapain tag", cName + " what? Lagi sibuk..Ngapain seh ngetag", cName + " Kenapa? pc aja klo penting ", cName + " kenapa? Gw sibuk ngapain tag", cName + " Ada Perlu apa? jgn tag doang", cName + "ya? Kenapa? Sibuk gw jan tag tag","Hmm? Sibuk", cName + "ngapain tag? Sibuk gw "]
-                     ret_ = "{αυтσ яεꌗρσи∂}\n" + random.choice(balas)
+                     balas = ["Ngapain tag", cName + " Knp?"]
+                     ret_ = "Auto Respon\n" + random.choice(balas)
                      name = re.findall(r'@(\w+)', msg.text)
                      mention = ast.literal_eval(msg.contentMetadata['MENTION'])
                      mentionees = mention['MENTIONEES']
@@ -905,6 +905,30 @@ def bot(op):
                 midd = msg.text.replace("Invite ","")
                 cl.findAndAddContactsByMid(midd)
                 cl.inviteIntoGroup(msg.to,[midd])
+            elif msg.text.lower() == 'Sensi on':
+                if wait["linkprotect"] == True:
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"Sensi on already On")
+                    else:
+                        cl.sendText(msg.to,"Sensi on already On")
+                else:
+                    wait["linkprotect"] = True
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"Sensi on already On")
+                    else:
+                        cl.sendText(msg.to,"Sensi on already On")
+            elif msg.text.lower() == 'Sensi off':
+                if wait["linkprotect"] == False:
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"Sensi off already off")
+                    else:
+                        cl.sendText(msg.to,"Sensi off already off")
+                else:
+                    wait["linkprotect"] = False
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"Protection Qr already Off")
+                    else:
+                        cl.sendText(msg.to,"Protection Qr already Off")
             elif msg.text in ["Respontag on","Autorespon:on","Respon on","Respon:on"]:
                 wait["detectMention"] = True
                 cl.sendText(msg.to,"Auto respon tag On")
@@ -1307,6 +1331,8 @@ def bot(op):
                 md = ""
                 if wait["contact"] == True: md+=" ❧Contact : on\n"
                 else: md+=" ❧Contact : off\n"
+                if wait["linkprotect"] == True: md+=" ❧Sensi :on\n"
+                else: md+=" ❧Sensi : off\n"
                 if wait["autoJoin"] == True: md+=" ❧Auto join : on\n"
                 else: md +=" ❧Auto join : off\n"
                 if wait["autoCancel"]["on"] == True:md+=" ❧Group cancel :" + str(wait["autoCancel"]["members"]) + "\n"
