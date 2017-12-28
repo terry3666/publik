@@ -39,62 +39,46 @@ print "login success"
 reload(sys)
 sys.setdefaultencoding('utf-8')
 
-helpMessage =""" 
-✍️T̸̡̛̎ͬͩ̀̂̿́́̾͌̃̋̀́̚͟͜Σ̸̸̲͔̲͖̞̈͑ͦͬ̈ͫ̈́̈́̐̾ͣ́̒Δ̣̰͆͢͡͞M̸̨̧̉́͘͢ ̢̠̮̰̼̈͒̋̊͆̌̐̌ͫ̂ͧ͋ͭͪ̈́͜J̠͂̽̂̏̄͆̌̐̎̾Ω̷̨̨̖̘̹ͬ́́͢͞Ҝ̛̭ͯ͌͒ͭͨ̂̏̔̚͝Σ̯͇̳͕͔ͩͣR̶̬͕̬̟̎ͩ̅͛̽ͤ̇̊ͧ͊͛̚̕͞҉̛̛͘͠͏̵ ̟̮̰̒̒ͣ̀̄̂̔͒̔͋̚͜͝͡β̴̨̛ͫͫ̄͊́̚Ω̫̈ͤ́̋ͩ͂̄̀ͥ͛ͥ̒̈́̇̚Ţ̵̸̸̡̛̲̩̐͛ͦ͌̃̓ͩ̃̏̓ͨ̄̓͆̀̕̕͞͞͠S̳̪̘̒̐̑ͧͦ͏̵̛̀̕͡͡ ✈
-❧HͦͯͦͯEͦͯͦͯLͦͯͦͯPͦͯͦͯ SͦͯͦͯEͦͯͦͯLͦͯͦͯFͦͯͦͯBͦͯͦͯOͦͯͦͯTͦͯͦͯ CͦͯͦͯOͦͯͦͯMͦͯͦͯMͦͯͦͯAͦͯͦͯNͦͯͦͯDͦͯͦͯ 
-❧Gͦͯͦͯnͦͯͦͯ [nͦͯͦͯaͦͯͦͯmͦͯͦͯeͦͯͦͯgͦͯͦͯrͦͯͦͯoͦͯͦͯuͦͯͦͯpͦͯͦͯ] 
-❧Kͦͯͦͯiͦͯͦͯcͦͯͦͯkͦͯͦͯ [mͦͯͦͯiͦͯͦͯdͦͯͦͯ] 
-❧Iͦͯͦͯnͦͯͦͯvͦͯͦͯiͦͯͦͯtͦͯͦͯeͦͯͦͯ [mͦͯͦͯiͦͯͦͯdͦͯͦͯ] 
-❧Mͦͯͦͯeͦͯͦͯ 
-❧Cͦͯͦͯaͦͯͦͯnͦͯͦͯcͦͯͦͯeͦͯͦͯlͦͯͦͯ 
-❧Gͦͯͦͯuͦͯͦͯrͦͯͦͯlͦͯͦͯ 
-❧Cͦͯͦͯuͦͯͦͯrͦͯͦͯlͦͯͦͯ 
-❧Iͦͯͦͯdͦͯͦͯ 
-❧Mͦͯͦͯiͦͯͦͯdͦͯͦͯ 
-❧Cͦͯͦͯnͦͯͦͯ [Tͦͯͦͯeͦͯͦͯxͦͯͦͯtͦͯͦͯ] 
-❧Mͦͯͦͯcͦͯͦͯ [Mͦͯͦͯiͦͯͦͯdͦͯͦͯ] 
-❧Iͦͯͦͯnͦͯͦͯfͦͯͦͯoͦͯͦͯ 
-❧Gͦͯͦͯcͦͯͦͯaͦͯͦͯnͦͯͦͯcͦͯͦͯeͦͯͦͯlͦͯͦͯ:[oͦͯͦͯnͦͯͦͯ/oͦͯͦͯfͦͯͦͯfͦͯͦͯ] 
-❧Sͦͯͦͯaͦͯͦͯnͦͯͦͯgͦͯͦͯeͦͯͦͯiͦͯͦͯnͦͯͦͯ [tͦͯͦͯaͦͯͦͯgͦͯͦͯoͦͯͦͯrͦͯͦͯgͦͯͦͯ] 
-❧Cͦͯͦͯaͦͯͦͯnͦͯͦͯcͦͯͦͯeͦͯͦͯlͦͯͦͯaͦͯͦͯlͦͯͦͯlͦͯͦͯ 
-❧Mͦͯͦͯeͦͯͦͯsͦͯͦͯsͦͯͦͯaͦͯͦͯgͦͯͦͯeͦͯͦͯ cͦͯͦͯhͦͯͦͯaͦͯͦͯnͦͯͦͯgͦͯͦͯeͦͯͦͯ: [tͦͯͦͯeͦͯͦͯxͦͯͦͯtͦͯͦͯ] 
-❧Mͦͯͦͯeͦͯͦͯsͦͯͦͯsͦͯͦͯaͦͯͦͯgͦͯͦͯeͦͯͦͯ aͦͯͦͯdͦͯͦͯdͦͯͦͯ: [tͦͯͦͯeͦͯͦͯxͦͯͦͯtͦͯͦͯ] 
-❧Cͦͯͦͯoͦͯͦͯmͦͯͦͯmͦͯͦͯeͦͯͦͯnͦͯͦͯtͦͯͦͯ: [tͦͯͦͯeͦͯͦͯxͦͯͦͯtͦͯͦͯ] 
-❧Aͦͯͦͯdͦͯͦͯdͦͯͦͯ cͦͯͦͯoͦͯͦͯmͦͯͦͯmͦͯͦͯeͦͯͦͯnͦͯͦͯtͦͯͦͯ:[tͦͯͦͯeͦͯͦͯxͦͯͦͯtͦͯͦͯ] 
-❧Cͦͯͦͯoͦͯͦͯmͦͯͦͯmͦͯͦͯeͦͯͦͯnͦͯͦͯtͦͯͦͯ 
-❧Cͦͯͦͯoͦͯͦͯmͦͯͦͯmͦͯͦͯeͦͯͦͯnͦͯͦͯtͦͯͦͯ bͦͯͦͯlͦͯͦͯ 
-❧Cͦͯͦͯoͦͯͦͯmͦͯͦͯmͦͯͦͯeͦͯͦͯnͦͯͦͯtͦͯͦͯ wͦͯͦͯlͦͯͦͯ 
-❧Cͦͯͦͯoͦͯͦͯmͦͯͦͯmͦͯͦͯeͦͯͦͯnͦͯͦͯtͦͯͦͯ bͦͯͦͯlͦͯͦͯ cͦͯͦͯoͦͯͦͯnͦͯͦͯfͦͯͦͯiͦͯͦͯrͦͯͦͯmͦͯͦͯ 
-❧Sͦͯͦͯeͦͯͦͯtͦͯͦͯ 
-❧Sͦͯͦͯiͦͯͦͯdͦͯͦͯeͦͯͦͯrͦͯͦͯ 
-❧Rͦͯͦͯuͦͯͦͯnͦͯͦͯtͦͯͦͯiͦͯͦͯmͦͯͦͯeͦͯͦͯ 
-❧Yͦͯͦͯ/Oͦͯͦͯ 
-❧Kͦͯͦͯiͦͯͦͯlͦͯͦͯlͦͯͦͯ 
-❧Cͦͯͦͯlͦͯͦͯeͦͯͦͯaͦͯͦͯnͦͯͦͯsͦͯͦͯeͦͯͦͯ 
-❧Nͦͯͦͯkͦͯͦͯ [@] 
-❧Bͦͯͦͯlͦͯͦͯaͦͯͦͯcͦͯͦͯkͦͯͦͯlͦͯͦͯiͦͯͦͯsͦͯͦͯtͦͯͦͯ [@] 
-❧Bͦͯͦͯaͦͯͦͯnͦͯͦͯ [@] 
-❧Uͦͯͦͯnͦͯͦͯbͦͯͦͯaͦͯͦͯnͦͯͦͯ [@] 
-❧Sͦͯͦͯpͦͯͦͯaͦͯͦͯmͦͯͦͯ [oͦͯͦͯnͦͯͦͯ] [jͦͯͦͯuͦͯͦͯmͦͯͦͯlͦͯͦͯaͦͯͦͯhͦͯͦͯ] [tͦͯͦͯeͦͯͦͯxͦͯͦͯtͦͯͦͯ] 
-❧Sͦͯͦͯpͦͯͦͯaͦͯͦͯmͦͯͦͯ cͦͯͦͯhͦͯͦͯaͦͯͦͯnͦͯͦͯgͦͯͦͯeͦͯͦͯ: 
-❧Sͦͯͦͯpͦͯͦͯaͦͯͦͯmͦͯͦͯ aͦͯͦͯdͦͯͦͯdͦͯͦͯ: 
-❧Sͦͯͦͯpͦͯͦͯaͦͯͦͯmͦͯͦͯ: 
-❧Sͦͯͦͯpͦͯͦͯaͦͯͦͯmͦͯͦͯcͦͯͦͯoͦͯͦͯnͦͯͦͯtͦͯͦͯaͦͯͦͯcͦͯͦͯtͦͯͦͯ [@] 
-❧Sͦͯͦͯpͦͯͦͯaͦͯͦͯmͦͯͦͯtͦͯͦͯaͦͯͦͯgͦͯͦͯ [@] 
-❧Sͦͯͦͯuͦͯͦͯmͦͯͦͯmͦͯͦͯoͦͯͦͯnͦͯͦͯ 
-❧XͦͯͦͯpͦͯͦͯrͦͯͦͯtͦͯͦͯCͦͯͦͯrͦͯͦͯsͦͯͦͯhͦͯͦͯ 
-❧Cͦͯͦͯrͦͯͦͯsͦͯͦͯhͦͯͦͯ 
-❧Bͦͯͦͯcͦͯͦͯ [tͦͯͦͯeͦͯͦͯxͦͯͦͯtͦͯͦͯ] 
-❧cͦͯͦͯoͦͯͦͯpͦͯͦͯyͦͯͦͯ [@] 
-❧Bͦͯͦͯaͦͯͦͯcͦͯͦͯkͦͯͦͯuͦͯͦͯpͦͯͦͯ 
-❧kͦͯͦͯeͦͯͦͯdͦͯͦͯaͦͯͦͯpͦͯͦͯkͦͯͦͯeͦͯͦͯdͦͯͦͯiͦͯͦͯpͦͯͦͯ [tͦͯͦͯeͦͯͦͯxͦͯͦͯtͦͯͦͯ] / Fͦͯͦͯaͦͯͦͯnͦͯͦͯcͦͯͦͯyͦͯͦͯtͦͯͦͯeͦͯͦͯxͦͯͦͯtͦͯͦͯ: [tͦͯͦͯeͦͯͦͯxͦͯͦͯtͦͯͦͯ] 
-❧Rͦͯͦͯeͦͯͦͯsͦͯͦͯpͦͯͦͯoͦͯͦͯnͦͯͦͯ 
-❧Sͦͯͦͯpͦͯͦͯeͦͯͦͯeͦͯͦͯdͦͯͦͯ 
-❧UͦͯͦͯpͦͯͦͯdͦͯͦͯaͦͯͦͯtͦͯͦͯeͦͯͦͯNͦͯͦͯaͦͯͦͯmͦͯͦͯeͦͯͦͯ 
-❧Bͦͯͦͯaͦͯͦͯnͦͯͦͯ 
-❧Cͦͯͦͯeͦͯͦͯkͦͯͦͯ bͦͯͦͯaͦͯͦͯnͦͯͦͯ 
-❧Kͦͯͦͯiͦͯͦͯlͦͯͦͯlͦͯͦͯ bͦͯͦͯaͦͯͦͯnͦͯͦͯ 
-❧Cͦͯͦͯlͦͯͦͯeͦͯͦͯaͦͯͦͯrͦͯͦͯ
+helpMessage =""" 「ѕєℓf ¢σммαи∂」
+
+
+「¢яєαтσя」
+「gи」
+「кι¢к мι∂」
+「¢αи¢єℓ」
+「gυяℓ」
+「¢υяℓ」
+「ι∂」
+「мι∂」
+「м¢ мι∂」 
+「ιиfσ」
+「g¢αи¢єℓ:σи/σff」
+「ѕαиgєιи: @」
+「мєѕѕαgє ¢нαиgє: тєχт」
+「мєѕѕαgє α∂∂: тєχт」
+「¢σммєит: тєχт α∂∂」
+「gιиfσ」
+「g¢яєαтσя」
+「¢σммєит: тєχт」
+「¢σммєит」
+「¢σммєит вℓ」
+「¢σммєит ωℓ」 
+「¢σммєит」
+「вℓ ¢σиfιям」
+「ѕєт」
+「ѕι∂єя」
+「яυитιмє」
+「у/σ」
+「кιℓℓ」 
+「¢ℓєαиѕє」 
+「ик @」
+「вℓα¢кℓιѕт @」
+「вαи @」
+「кιℓℓ вαи」 
+「¢ℓєαя」
+「яєѕρσи σи/σff」
+「¢ℓєαя вαи」
+「ѕυммσи」
 """
 KAC=[cl,ki,kk,kc]
 mid = cl.getProfile().mid
@@ -105,15 +89,15 @@ Dmid = ke.getProfile().mid
 Bots=[mid,Amid,Bmid,Cmid,Dmid]
 admin=["uc1c72b2a69c6ab18a7b28aa77fee5822"]
 wait = {
-    'contact':True,
-    'autoJoin':True,
+    'contact':False,
+    'autoJoin':False,
     'autoCancel':{"on":True,"members":1},
-    'leaveRoom':True,
-    'timeline':True,
-    'autoAdd':True,
-    'message':"Thanks for add me",
+    'leaveRoom'False,
+    'timeline':False,
+    'autoAdd':False,
+    'message':"Hmmm ngeadd",
     "lang":"JP",
-    "comment":"Thanks for add me",
+    "comment":"Hmm ngeadd",
     "commentOn":False,
     "commentBlack":{},
     "wblack":False,
@@ -126,14 +110,13 @@ wait = {
     "blacklist":{},
     "wblacklist":False,
     "dblacklist":False,
-    "Protectgr":True,
     "Protectjoin":False,
     "Protectcancl":True,
     "protectionOn":True,
     "atjointicket":True,
-    "protectionOn":True,
     "linkprotect":False,
     "protecteasy":True,
+    "detectMention":True,
     }
 
 wait2 = {
@@ -436,19 +419,6 @@ def bot(op):
                     G = cl.getGroup(op.param1)
                     G.preventJoinByTicket = True
                     cl.updateGroup(G)
-     #   if op.type == 5:
-     #       if wait["autoAdd"] == True:
-     #           if (wait["message"] in [""," ","\n",None]):
-     #               pass
-     #           else:
-     #               cl.sendText(op.param1,str(wait["message"]))
-        #if op.type == 11:
-            #if wait["linkprotect"] == True:
-                #if op.param2 not in Bots:
-                    #G = cl.getGroup(op.param1)
-                    #G.preventJoinByTicket = True
-                    #.kickoutFromGroup(op.param1,[op.param3])
-                    #cl.updateGroup(G)
         #------Protect Group Kick finish-----#
         #------CCTV-------------===----------#
         if op.type == 55:
@@ -835,7 +805,6 @@ def bot(op):
                 invsend = 0
                 Ticket = cl.reissueGroupTicket(msg.to)
                 ke.acceptGroupInvitationByTicket(msg.to,Ticket)
-                time.sleep(0.2)
                 targets = []
                 for s in gs.members:
                         if _name in s.displayName:
@@ -927,7 +896,7 @@ def bot(op):
                 kc.inviteIntoGroup(msg.to,[midd])
             elif msg.text in ["Creator"]:
                 msg.contentType = 13
-                cl.sendText(msg.to, "🅹🅾🅺🅴🆁 🅱🅾🆃")
+                cl.sendText(msg.to, "✍️T̸̡̛̎ͬͩ̀̂̿́́̾͌̃̋̀́̚͟͜Σ̸̸̲͔̲͖̞̈͑ͦͬ̈ͫ̈́̈́̐̾ͣ́̒Δ̣̰͆͢͡͞M̸̨̧̉́͘͢ ̢̠̮̰̼̈͒̋̊͆̌̐̌ͫ̂ͧ͋ͭͪ̈́͜J̠͂̽̂̏̄͆̌̐̎̾Ω̷̨̨̖̘̹ͬ́́͢͞Ҝ̛̭ͯ͌͒ͭͨ̂̏̔̚͝Σ̯͇̳͕͔ͩͣR̶̬͕̬̟̎ͩ̅͛̽ͤ̇̊ͧ͊͛̚̕͞҉̛̛͘͠͏̵ ̟̮̰̒̒ͣ̀̄̂̔͒̔͋̚͜͝͡β̴̨̛ͫͫ̄͊́̚Ω̫̈ͤ́̋ͩ͂̄̀ͥ͛ͥ̒̈́̇̚Ţ̵̸̸̡̛̲̩̐͛ͦ͌̃̓ͩ̃̏̓ͨ̄̓͆̀̕̕͞͞͠S̳̪̘̒̐̑ͧͦ͏̵̛̀̕͡͡ ✈")
                 msg.contentMetadata = {'mid': mid}
                 cl.sendMessage(msg)
             elif msg.text in ["Bot"]:
@@ -1337,7 +1306,6 @@ def bot(op):
                 invsend = 0
                 Ticket = ki.reissueGroupTicket(msg.to)
                 kc.acceptGroupInvitationByTicket(msg.to,Ticket)
-                time.sleep(0.0)
                 targets = []
                 for s in gs.members:
                         if _name in s.displayName:
@@ -1362,24 +1330,26 @@ def bot(op):
                 return
             elif msg.text in ["Info"]:
                 md = ""
-                if wait["contact"] == True: md+=" ❧Contact : on\n"
-                else: md+=" ❧Contact : off\n"
-                if wait["linkprotect"] == True: md+=" ❧Sensi : on\n"
-                else: md+=" ❧Sensi : off\n"
-                if wait["protecteasy"] == True: md+=" ❧Easy : on\n"
-                else: md+=" ❧Easy : off\n"
-                if wait["autoJoin"] == True: md+=" ❧Auto join : on\n"
-                else: md +=" ❧Auto join : off\n"
-                if wait["autoCancel"]["on"] == True:md+=" ❧Group cancel :" + str(wait["autoCancel"]["members"]) + "\n"
-                else: md+= " ❧Group cancel : off\n"
-                if wait["leaveRoom"] == True: md+=" ❧Auto leave : on\n"
-                else: md+=" ❧Auto leave : off\n"
-                if wait["timeline"] == True: md+=" ❧Share : on\n"
-                else:md+=" ❧Share : off\n"
-                if wait["autoAdd"] == True: md+=" ❧Auto add : on\n"
-                else:md+=" ❧Auto add : off\n"
-                if wait["commentOn"] == True: md+=" ❧Comment : on\n"
-                else:md+=" ❧Comment : off\n"
+                if wait["contact"] == True: md+=" 「❧Contact : on」\n"
+                else: md+=" 「❧Contact : off」\n"
+                if wait["linkprotect"] == True: md+=" 「❧Sensi : on」\n"
+                else: md+=" 「❧Sensi : off」\n"
+		if wait["detectMention"] == True: md+=" 「❧Tag : on」\n"
+                else: md+=" 「❧Tag : off」\n"
+                if wait["protecteasy"] == True: md+=" 「❧Easy : on」\n"
+                else: md+=" 「❧Easy : off」\n"
+                if wait["autoJoin"] == True: md+=" 「❧Auto join : on」\n"
+                else: md +=" 「❧Auto join : off」\n"
+                if wait["autoCancel"]["on"] == True:md+=" 「❧Group cancel :" + str(wait["autoCancel"]["members"]) + "」\n"
+                else: md+= " 「❧Group cancel : off」\n"
+                if wait["leaveRoom"] == True: md+=" 「❧Auto leave : on」\n"
+                else: md+=" 「❧Auto leave : off」\n"
+                if wait["timeline"] == True: md+=" 「❧Share : on」\n"
+                else:md+=" 「❧Share : off」\n"
+                if wait["autoAdd"] == True: md+=" 「❧Auto add : on」\n"
+                else:md+=" 「❧Auto add : off」\n"
+                if wait["commentOn"] == True: md+=" 「❧Comment : on」\n"
+                else:md+=" 「❧Comment : off」\n"
                 cl.sendText(msg.to,md)
             elif "album merit " in msg.text:
                 gid = msg.text.replace("album merit ","")
@@ -1641,7 +1611,7 @@ def bot(op):
                                 print rom
                                 chiya += rom[1] + "\n"
 
-                        cl.sendText(msg.to, "❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧\nActive readers:%s\n\n\n\nPassive readers:\n%s\n\n❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧\nIn the last seen point:\n[%s]\n❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧\n ✍️T̸̡̛̎ͬͩ̀̂̿́́̾͌̃̋̀́̚͟͜Σ̸̸̲͔̲͖̞̈͑ͦͬ̈ͫ̈́̈́̐̾ͣ́̒Δ̣̰͆͢͡͞M̸̨̧̉́͘͢ ̢̠̮̰̼̈͒̋̊͆̌̐̌ͫ̂ͧ͋ͭͪ̈́͜J̠͂̽̂̏̄͆̌̐̎̾Ω̷̨̨̖̘̹ͬ́́͢͞Ҝ̛̭ͯ͌͒ͭͨ̂̏̔̚͝Σ̯͇̳͕͔ͩͣR̶̬͕̬̟̎ͩ̅͛̽ͤ̇̊ͧ͊͛̚̕͞҉̛̛͘͠͏̵ ̟̮̰̒̒ͣ̀̄̂̔͒̔͋̚͜͝͡β̴̨̛ͫͫ̄͊́̚Ω̫̈ͤ́̋ͩ͂̄̀ͥ͛ͥ̒̈́̇̚Ţ̵̸̸̡̛̲̩̐͛ͦ͌̃̓ͩ̃̏̓ͨ̄̓͆̀̕̕͞͞͠S̳̪̘̒̐̑ͧͦ͏̵̛̀̕͡͡ ✈" % (wait2['readMember'][msg.to],chiya,setTime[msg.to]))
+                        cl.sendText(msg.to, "❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧\nActive readers:%s\n\n\n\nPassive readers:\n%s\n\n❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧\nIn the last seen point:\n[%s]\n❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧\n ✍️T̸̡̛̎ͬͩ̀̂̿́́̾͌̃̋̀́̚͟͜Σ̸̸̲͔̲͖̞̈͑ͦͬ̈ͫ̈́̈́̐̾ͣ́̒Δ̣̰͆͢͡͞M̸̨̧̉́͘͢ ̢̠̮̰̼̈͒̋̊͆̌̐̌ͫ̂ͧ͋ͭͪ̈́͜J̠͂̽̂̏̄͆̌̐̎̾Ω̷̨̨̖̘̹ͬ́́͢͞Ҝ̛̭ͯ͌͒ͭͨ̂̏̔̚͝Σ̯͇̳͕͔ͩͣR̶̬͕̬̟̎ͩ̅͛̽ͤ̇̊ͧ͊͛̚̕͞҉̛̛͘͠͏̵ ̟̮̰̒̒ͣ̀̄̂̔͒̔͋̚͜͝͡β̴̨̛ͫͫ̄͊́̚Ω̫̈ͤ́̋ͩ͂̄̀ͥ͛ͥ̒̈́̇̚Ţ̵̸̸̡̛̲̩̐͛ͦ͌̃̓ͩ̃̏̓ͨ̄̓͆̀̕̕͞͞͠S̳̪̘̒̐̑ͧͦ͏̵̛̀̕͡͡ ✈" % (wait2['readMember'][msg.to],chiya,setTime[msg.to]))
                         print "ReadPoint Set..."
                         try:
                             del wait2['readPoint'][msg.to]
@@ -1661,7 +1631,7 @@ def bot(op):
 
             elif msg.text.lower() == 'runtime':
                 eltime = time.time() - mulai
-                van = "Bot aktif selama "+waktu(eltime)
+                van = "「Bot aktif selama」"+waktu(eltime)
                 cl.sendText(msg.to,van)
 
 #------------------------------------------------------------#
@@ -1672,7 +1642,7 @@ def bot(op):
                 cl.sendText(msg.to,van)
 
             elif msg.text in ["Restart"]:
-                cl.sendText(msg.to, "Bot has been restarted")
+                cl.sendText(msg.to, "「Bot has been restarted」")
                 restart_program()
                 print "@Restart"
 
@@ -1686,11 +1656,8 @@ def bot(op):
                         invsend = 0
                         Ticket = cl.reissueGroupTicket(msg.to)
                         ki.acceptGroupInvitationByTicket(msg.to,Ticket)
-                        time.sleep(0.2)
                         kk.acceptGroupInvitationByTicket(msg.to,Ticket)
-                        time.sleep(0.2)
                         kc.acceptGroupInvitationByTicket(msg.to,Ticket)
-                        time.sleep(0.2)
                         G = cl.getGroup(msg.to)
                         G.preventJoinByTicket = True
                         ki.updateGroup(G)
@@ -1994,24 +1961,42 @@ def bot(op):
                 gs = cl.getGroup(msg.to)
                 for g in gs.members:
                     if _nametarget == g.displayName:
-                       cl.sendText(g.mid,"Spam")
-                       cl.sendText(g.mid,"Spam")
-                       cl.sendText(g.mid,"Spam")
-                       cl.sendText(g.mid,"Spam")
-                       cl.sendText(g.mid,"Spam")
-                       cl.sendText(g.mid,"Spam")
-                       cl.sendText(g.mid,"Spam")
-                       cl.sendText(g.mid,"Spam")
-                       cl.sendText(g.mid,"Spam")
-                       cl.sendText(g.mid,"Spam")
-                       cl.sendText(g.mid,"Spam")
-                       cl.sendText(g.mid,"Spam")
-                       cl.sendText(g.mid,"Spam")
-                       cl.sendText(g.mid,"Spam")
-                       cl.sendText(g.mid,"Spam")
-                       cl.sendText(g.mid,"Spam")
-                       cl.sendText(g.mid,"Spam")
-                       cl.sendText(g.mid,"Spam")
+		       ki.sendText(g.mid,"Spam")
+		       ki.sendText(g.mid,"Spam")
+		       ki.sendText(g.mid,"Spam")
+		       ki.sendText(g.mid,"Spam")
+		       ki.sendText(g.mid,"Spam")
+		       ki.sendText(g.mid,"Spam")
+		       ki.sendText(g.mid,"Spam")
+		       ki.sendText(g.mid,"Spam")
+		       ki.sendText(g.mid,"Spam")
+		       ki.sendText(g.mid,"Spam")
+		       ki.sendText(g.mid,"Spam")
+		       ki.sendText(g.mid,"Spam")
+		       kk.sendText(g.mid,"Spam")
+		       kk.sendText(g.mid,"Spam")
+		       kk.sendText(g.mid,"Spam")
+		       kk.sendText(g.mid,"Spam")
+		       kk.sendText(g.mid,"Spam")
+		       kk.sendText(g.mid,"Spam")
+		       kk.sendText(g.mid,"Spam")
+		       kk.sendText(g.mid,"Spam")
+		       kk.sendText(g.mid,"Spam")
+		       kk.sendText(g.mid,"Spam")
+		       kk.sendText(g.mid,"Spam")
+		       kk.sendText(g.mid,"Spam")
+		       kc.sendText(g.mid,"Spam")
+		       kc.sendText(g.mid,"Spam")
+		       kc.sendText(g.mid,"Spam")
+		       kc.sendText(g.mid,"Spam")
+		       kc.sendText(g.mid,"Spam")
+		       kc.sendText(g.mid,"Spam")
+		       kc.sendText(g.mid,"Spam")
+		       kc.sendText(g.mid,"Spam")
+		       kc.sendText(g.mid,"Spam")
+		       kc.sendText(g.mid,"Spam")
+		       kc.sendText(g.mid,"Spam")
+		       kc.sendText(g.mid,"Spam")
                        cl.sendText(msg.to, "Done")
                        print " Spammed !"
 
@@ -2319,7 +2304,6 @@ def bot(op):
                         group = cl.getGroup(msg.to)
                         for var in range(0,num):
                             name = "".join([random.choice(source_str) for x in xrange(10)])
-                            time.sleep(0.01)
                             group.name = name
                             cl.updateGroup(group)
                     except:
