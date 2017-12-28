@@ -508,6 +508,17 @@ def bot(op):
                     pass
                 else:
                     cl.cancelGroupInvitation(op.param1, matched_list)
+        #------Joined User Kick start------#
+        if op.type == 17:
+           if wait["Protectjoin"] == True:
+               if op.param2 not in admin and Bots:
+                  G = cl.getGroup(op.param1)
+                  G.preventJoinByTicket = True
+                  Ticket = cl.reissueGroupTicket(op.param1)
+                  ke.acceptGroupInvitationByTicket(op.param1)
+                  ke.kickoutFromGroup(op.param1,[op.param2])
+                  ke.leaveGroup(op.param1)
+        #---------------------------------#
 
         if op.type == 19:
                 if mid in op.param3:
@@ -1149,6 +1160,32 @@ def bot(op):
                     wait["contact"] = False
                     if wait["lang"] == "JP":
                         cl.sendText(msg.to,"already off")
+                    else:
+                        cl.sendText(msg.to,"done")
+            elif msg.text in ["Join on","join on"]:
+              if msg.from_ in admin:
+                if wait["Protectjoin"] == True:
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"On")
+                    else:
+                        cl.sendText(msg.to,"done")
+                else:
+                    wait["Protectjoin"] = True
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"On")
+                    else:
+                        cl.sendText(msg.to,"done")
+            elif msg.text in ["Join off","join off"]:
+              if msg.from_ in admin:
+                if wait["Protectjoin"] == False:
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"Off")
+                    else:
+                        cl.sendText(msg.to,"done")
+                else:
+                    wait["Protectjoin"] = False
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"Off")
                     else:
                         cl.sendText(msg.to,"done")
             elif msg.text in ["Sensi on"]:
