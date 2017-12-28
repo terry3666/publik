@@ -133,6 +133,7 @@ wait = {
     "atjointicket":True,
     "protectionOn":True,
     "linkprotect":False,
+    "protecteasy":True,
     }
 
 wait2 = {
@@ -424,30 +425,30 @@ def bot(op):
                     ke.acceptGroupInvitationByTicket(op.param1,Ticket)
                     ke.kickoutFromGroup(op.param1,[op.param2])
                     cl.updateGroup(G)
-                    ke.kickoutFromGroup(op.param1,[op.param2])
+		    ke.leaveGroup(op.param1)
+			
+        if op.type == 11:
+            if op.param2 not in Bots:
+                if op.param2 in Bots:
+                    pass
+                elif wait["protecteasy"] == True:
+                    wait ["blacklist"][op.param2] = True
+                    G = cl.getGroup(op.param1)
+                    G.preventJoinByTicket = True
+                    cl.updateGroup(G)
      #   if op.type == 5:
      #       if wait["autoAdd"] == True:
      #           if (wait["message"] in [""," ","\n",None]):
      #               pass
      #           else:
      #               cl.sendText(op.param1,str(wait["message"]))
-        if op.type == 11:
-            if wait["linkprotect"] == True:
-                if op.param2 not in Bots:
-                    G = cl.getGroup(op.param1)
-                    G.preventJoinByTicket = True
+        #if op.type == 11:
+            #if wait["linkprotect"] == True:
+                #if op.param2 not in Bots:
+                    #G = cl.getGroup(op.param1)
+                    #G.preventJoinByTicket = True
                     #.kickoutFromGroup(op.param1,[op.param3])
-                    cl.updateGroup(G)
-        if op.type == 11:
-           if wait["Protectgr"] == True:
-               if op.param2 not in Bots:
-                  G = ki.getGroup(op.param1)
-                  G.preventJoinByTicket = True
-                  Ticket = ki.reissueGroupTicket(op.param1)
-                  ku.acceptGroupInvitationByTicket(op.param1,Ticket)
-                  ku.kickoutFromGroup(op.param1,[op,param2])
-                  ki.updateGroup(G)
-                  ku.leaveGroup(op.param1)
+                    #cl.updateGroup(G)
         #------Protect Group Kick finish-----#
         #------CCTV-------------===----------#
         if op.type == 55:
@@ -1205,6 +1206,30 @@ def bot(op):
                         cl.sendText(msg.to,"Protection Qr already Off")
                     else:
                         cl.sendText(msg.to,"Protection Qr already Off")
+            elif msg.text in ["Easy on"]:
+                if wait["protecteasy"] == True:
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"Easy on already On")
+                    else:
+                        cl.sendText(msg.to,"Easy on already On")
+                else:
+                    wait["protecteasy"] = True
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"Easy on already On")
+                    else:
+                        cl.sendText(msg.to,"Easy on already On")
+            elif msg.text in ["Easy off"]:
+                if wait["protecteasy"] == False:
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"Easy off already off")
+                    else:
+                        cl.sendText(msg.to,"Easy off already off")
+                else:
+                    wait["protecteasy"] = False
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"Easy already Off")
+                    else:
+                        cl.sendText(msg.to,"Easy already Off")
             elif msg.text in ["è‡ªå‹•å‚åŠ :ã‚ªãƒ³","Join on","Auto join:on","è‡ªå‹•åƒåŠ ï¼šé–‹"]:
                 if wait["autoJoin"] == True:
                     if wait["lang"] == "JP":
@@ -1339,8 +1364,10 @@ def bot(op):
                 md = ""
                 if wait["contact"] == True: md+=" ❧Contact : on\n"
                 else: md+=" ❧Contact : off\n"
-                if wait["linkprotect"] == True: md+=" ❧Sensi :on\n"
+                if wait["linkprotect"] == True: md+=" ❧Sensi : on\n"
                 else: md+=" ❧Sensi : off\n"
+                if wait["protecteasy"] == True: md+=" ❧Easy : on\n"
+                else: md+=" ❧Easy : off\n"
                 if wait["autoJoin"] == True: md+=" ❧Auto join : on\n"
                 else: md +=" ❧Auto join : off\n"
                 if wait["autoCancel"]["on"] == True:md+=" ❧Group cancel :" + str(wait["autoCancel"]["members"]) + "\n"
@@ -2187,7 +2214,7 @@ def bot(op):
 
             elif msg.text in ["Sp","Speed","speed"]:
                 start = time.time()
-                cl.sendText(msg.to, "Progress...")
+                cl.sendText(msg.to, "R҉e҉d҉i҉r҉e҉c҉t҉i҉n҉g҉...")
                 elapsed_time = time.time() - start
                 cl.sendText(msg.to, "%sseconds" % (elapsed_time))
 
@@ -2217,6 +2244,11 @@ def bot(op):
                 ki.sendText(msg.to,"send contact")
                 kk.sendText(msg.to,"send contact")
                 kc.sendText(msg.to,"send contact")
+	    elif msg.text in ["Clear ban"]:
+              if msg.from_ in admin:
+                wait["blacklist"] = {}
+                with open('st2__b.json', 'w') as fp:json.dump(wait, fp,sort_keys=True, indent=4)
+                cl.sendText(msg.to,"Succes Clear Ban")
             elif msg.text in ["Unban"]:
                 wait["dblacklist"] = True
                 cl.sendText(msg.to,"send contact")
