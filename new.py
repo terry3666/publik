@@ -724,7 +724,7 @@ def bot(op):
                      mention = ast.literal_eval(msg.contentMetadata['MENTION'])
                      mentionees = mention['MENTIONEES']
                      for mention in mentionees:
-                           if mention['M'] in Bots
+                           if mention['M'] in Bots:
                                   cl.sendText(msg.to,ret_)
                                   break
         if op.type == 25:
