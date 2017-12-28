@@ -906,7 +906,7 @@ def bot(op):
                 midd = msg.text.replace("Invite ","")
                 cl.findAndAddContactsByMid(midd)
                 cl.inviteIntoGroup(msg.to,[midd])
-            elif msg.text.lower() == 'Sensi on':
+            elif msg.text() == 'Sensi on':
                 if wait["linkprotect"] == True:
                     if wait["lang"] == "JP":
                         cl.sendText(msg.to,"Sensi on already On")
@@ -918,7 +918,7 @@ def bot(op):
                         cl.sendText(msg.to,"Sensi on already On")
                     else:
                         cl.sendText(msg.to,"Sensi on already On")
-            elif msg.text.lower() == 'Sensi off':
+            elif msg.text() == 'Sensi off':
                 if wait["linkprotect"] == False:
                     if wait["lang"] == "JP":
                         cl.sendText(msg.to,"Sensi off already off")
@@ -948,14 +948,21 @@ def bot(op):
                 midd = msg.text.replace("Cv3 invite ","")
                 kc.findAndAddContactsByMid(midd)
                 kc.inviteIntoGroup(msg.to,[midd])
-            elif msg.text in ["Me"]:
+            elif msg.text in ["Creator"]:
                 msg.contentType = 13
+                cl.sendText(msg.to, "🅹🅾🅺🅴🆁 🅱🅾🆃")
                 msg.contentMetadata = {'mid': mid}
                 cl.sendMessage(msg)
-            elif msg.text in ["Cv1"]:
+            elif msg.text in ["Bot"]:
                 msg.contentType = 13
                 msg.contentMetadata = {'mid': Amid}
                 ki.sendMessage(msg)
+                msg.contentMetadata = {'mid': Bmid}
+                kk.sendMessage(msg)
+                msg.contentMetadata = {'mid': Cmid}
+                kc.sendMessage(msg)
+                msg.contentMetadata = {'mid': Dmid}
+                ke.sendMessage(msg)
             elif msg.text in ["Cv2"]:
                 msg.contentType = 13
                 msg.contentMetadata = {'mid': Bmid}
