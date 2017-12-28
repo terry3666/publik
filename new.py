@@ -517,6 +517,7 @@ def bot(op):
                   Ticket = cl.reissueGroupTicket(op.param1)
                   ke.acceptGroupInvitationByTicket(op.param1)
                   ke.kickoutFromGroup(op.param1,[op.param2])
+                  cl.updateGroup(G)
                   ke.leaveGroup(op.param1)
         #---------------------------------#
 
