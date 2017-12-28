@@ -422,7 +422,7 @@ def bot(op):
                     G.preventJoinByTicket = True
                     Ticket = cl.reissueGroupTicket(op.param1)
                     ke.acceptGroupInvitationByTicket(op.param1,Ticket)
-                    ke.kickoutFromGroup(op.param1,[op,param2])
+                    ke.kickoutFromGroup(op.param1,[op.param2])
                     cl.updateGroup(G)
                     ke.kickoutFromGroup(op.param1,[op.param2])
      #   if op.type == 5:
