@@ -1371,6 +1371,8 @@ def bot(op):
                 else: md+=" 「❧Contact : off」\n"
                 if wait["linkprotect"] == True: md+=" 「❧Sensi : on」\n"
                 else: md+=" 「❧Sensi : off」\n"
+                if wait["Protectjoin"] == True: md+=" 「❧Kickjoin : on」\n"
+                else: md+=" 「❧Kickjoin : off」\n
 		if wait["detectMention"] == True: md+=" 「❧Tag : on」\n"
                 else: md+=" 「❧Tag : off」\n"
                 if wait["protecteasy"] == True: md+=" 「❧Easy : on」\n"
