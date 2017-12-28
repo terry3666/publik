@@ -16,23 +16,23 @@ from threading import Thread
 
 
 cl = LineAlpha.LINE()
-cl.login(token="")
+cl.login(token="EoFTaey2YmpQAKgTXQL2.WCCRkMNgQXINSOQNF/5yiG.DDFkH9GiU51c964S+fj2tGtIqrmp9OqcdH9VBlHDyuk=")
 cl.loginResult()
 
 kk = LineAlpha.LINE()
-kk.login(token="")
+kk.login(token="EogSPjvrmHWqQalTLQa1.6FEeUgZiJRekuif7AJkoyq.+/GvJ+ghOQhZP/QbnaVhqJjM2O/br2QXUFcu5LDeAjg=")
 kk.loginResult()
 
 ki = LineAlpha.LINE()
-ki.login(token="")
+ki.login(token="Eo4j7icH5mb888S65zFc.WU1DIxPO+PMAGO5zAJJf+a.7Cy7uOxYvrrNITt68g5cjcDRjIPMgxW4Gm0wfeCHB5Y=")
 ki.loginResult()
 
 kc = LineAlpha.LINE()
-kc.login(token="")
+kc.login(token="EofGFCiEYImXkNkMgYm0.SIIDQHB+PWCP2bXYI9JK8a.2DpU8OdRfJxYNujwEINipMv7jLBf3jD3eyp0mWBgAXk=")
 kc.loginResult()
 
 ke = LineAlpha.LINE()
-ke.login(token="")
+ke.login(token="EofdZAL9bkX9q205oUJ2.zz02fzUHgHMt43YFBMIUuG.F74MlI2M2dloR+zdtdQKpLvZK1WIMma2uaoX+UQruc8=")
 ke.loginResult()
 
 print "login success"
@@ -712,6 +712,21 @@ def bot(op):
         if op.type == 24:
             if wait["leaveRoom"] == True:
                 cl.leaveRoom(op.param1)
+        if op.type == 26:
+            msg = op.message
+            if 'MENTION' in msg.contentMetadata.keys() != None:
+                 if wait["detectMention"] == True:
+                     contact = cl.getContact(msg.from_)
+                     cName = contact.displayName
+                     balas = ["Ngapain tag", cName + " Knp?"]
+                     ret_ = "Auto Respon\n" + random.choice(balas)
+                     name = re.findall(r'@(\w+)', msg.text)
+                     mention = ast.literal_eval(msg.contentMetadata['MENTION'])
+                     mentionees = mention['MENTIONEES']
+                     for mention in mentionees:
+                           if mention['M'] in Bots
+                                  cl.sendText(msg.to,ret_)
+                                  break
         if op.type == 25:
             msg = op.message
 
@@ -796,21 +811,7 @@ def bot(op):
                         except:
                             cu = ""
                         cl.sendText(msg.to,"[displayName]:\n" + contact.displayName + "\n[mid]:\n" + msg.contentMetadata["mid"] + "\n[statusMessage]:\n" + contact.statusMessage + "\n[pictureStatus]:\nhttp://dl.profile.line-cdn.net/" + contact.pictureStatus + "\n[coverURL]:\n" + str(cu))
-        if op.type == 26:
-            msg = op.message
-            if 'MENTION' in msg.contentMetadata.keys() != None:
-                 if wait["detectMention"] == True:
-                     contact = cl.getContact(msg.from_)
-                     cName = contact.displayName
-                     balas = ["Ngapain tag", cName + " Knp?"]
-                     ret_ = "Auto Respon\n" + random.choice(balas)
-                     name = re.findall(r'@(\w+)', msg.text)
-                     mention = ast.literal_eval(msg.contentMetadata['MENTION'])
-                     mentionees = mention['MENTIONEES']
-                     for mention in mentionees:
-                           if mention['M'] in Bots:
-                                  cl.sendText(msg.to,ret_)
-                                  break
+
             elif msg.contentType == 16:
                 if wait["timeline"] == True:
                     msg.contentType = 0
@@ -2182,9 +2183,6 @@ def bot(op):
                 cl.sendText(msg.to, "Progress...")
                 elapsed_time = time.time() - start
                 cl.sendText(msg.to, "%sseconds" % (elapsed_time))
-                ki.sendText(msg.to, "%sseconds" % (elapsed_time))
-                kk.sendText(msg.to, "%sseconds" % (elapsed_time))
-                kc.sendText(msg.to, "%sseconds" % (elapsed_time))
 
 #------------------------------------------------------#
             elif msg.text in ["UpdateName"]:
