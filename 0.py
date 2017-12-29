@@ -681,6 +681,7 @@ def bot(op):
         if op.type == 24:
             if wait["leaveRoom"] == True:
                 cl.leaveRoom(op.param1)
+        if op.type == 26:
             if 'MENTION' in msg.contentMetadata.keys() != None:
                  if wait["detectMention"] == True:
                      contact = cl.getContact(msg.from_)
@@ -2031,6 +2032,5 @@ while True:
         raise Exception("It might be wrong revision\n" + str(cl.Poll.rev))
 
     for Op in Ops:
-        if (Op.type != OpType.END_OF_OPERATION):
             cl.Poll.rev = max(cl.Poll.rev, Op.revision)
             bot(Op)
