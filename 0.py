@@ -681,21 +681,13 @@ def bot(op):
         if op.type == 24:
             if wait["leaveRoom"] == True:
                 cl.leaveRoom(op.param1)
-        if op.type == 26:
-            msg = op.message
             if 'MENTION' in msg.contentMetadata.keys() != None:
                  if wait["detectMention"] == True:
                      contact = cl.getContact(msg.from_)
                      cName = contact.displayName
-                     msg.contentType = 7
-                     msg.text = None
-                     msg.contentMetadata = {
-                                     "STKID": "110",
-                                     "STKPKGID": "1",
-                                     "STKVER": "100" }
-                     anu = cl.sendMessage(msg)
-                     ret_ = (anu)
-                     name = re.findall(r'@(\w+)', msg)
+                     balas = [cName + " Kepo", cName + " Ngapain manggil", cName + " Pc aja kalo kangen"]
+                     ret_ = random.choice(balas)
+                     name = re.findall(r'@(\w+)', msg.text)
                      mention = ast.literal_eval(msg.contentMetadata['MENTION'])
                      mentionees = mention['MENTIONEES']
                      for mention in mentionees:
