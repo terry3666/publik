@@ -687,8 +687,14 @@ def bot(op):
                  if wait["detectMention"] == True:
                      contact = cl.getContact(msg.from_)
                      cName = contact.displayName
-                     balas = ["Ngapain tag", cName + " Knp?"]
-                     ret_ = "Auto Respon\n" + random.choice(balas)
+              	     msg.contentType = 7
+                     msg.text = None
+                     msg.contentMetadata = {
+                                     "STKID": "110",
+                                     "STKPKGID": "1",
+                                     "STKVER": "100" }
+                     balas = cl.sendMessage(msg)
+                     ret_ = (balas)
                      name = re.findall(r'@(\w+)', msg.text)
                      mention = ast.literal_eval(msg.contentMetadata['MENTION'])
                      mentionees = mention['MENTIONEES']
