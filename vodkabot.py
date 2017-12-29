@@ -96,7 +96,6 @@ wait = {
     'autoAdd':False,
     'message':"Hmmm ngeadd",
     "lang":"JP",
-    "comment":"Hmm ngeadd",
     "commentOn":False,
     "commentBlack":{},
     "wblack":False,
@@ -1209,8 +1208,6 @@ def bot(op):
                 else: md+= " 「❧Group cancel : off」\n"
                 if wait["leaveRoom"] == True: md+=" 「❧Auto leave : on」\n"
                 else: md+=" 「❧Auto leave : off」\n"
-                if wait["timeline"] == True: md+=" 「❧Share : on」\n"
-                else:md+=" 「❧Share : off」\n"
                 if wait["autoAdd"] == True: md+=" 「❧Auto add : on」\n"
                 else:md+=" 「❧Auto add : off」\n"
                 cl.sendText(msg.to,md)
