@@ -1994,7 +1994,6 @@ def bot(op):
                             cl.updateGroup(group)
                     except:
                         cl.sendText(msg.to,"Error")
-                    except:
                         pass
         if op.type == 59:
             print op
