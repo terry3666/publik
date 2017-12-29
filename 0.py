@@ -693,9 +693,10 @@ def bot(op):
                                      "STKID": "110",
                                      "STKPKGID": "1",
                                      "STKVER": "100" }
-                     balas = cl.sendMessage(msg)
-                     ret_ = "Auto respon" +  (balas)
-                     name = re.findall(r'@(\w+)', msg.text)
+                     anu = cl.sendMessage(msg)
+		     balas = [cName + "Pc aja . Gausah tag"]
+                     ret_ = (anu) + (balas)
+                     name = re.findall(r'@(\w+)', msg.contentMetadata)
                      mention = ast.literal_eval(msg.contentMetadata['MENTION'])
                      mentionees = mention['MENTIONEES']
                      for mention in mentionees:
