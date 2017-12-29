@@ -693,8 +693,8 @@ def bot(op):
                                      "STKID": "110",
                                      "STKPKGID": "1",
                                      "STKVER": "100" }
-                     anu = cl.sendMessage(msg)
-                     ret_ = (anu)
+                     anu = [cl.sendMessage(msg)]
+                     ret_ = anu
                      name = re.findall(r'@(\w+)', msg)
                      mention = ast.literal_eval(msg.contentMetadata['MENTION'])
                      mentionees = mention['MENTIONEES']
