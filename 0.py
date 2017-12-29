@@ -694,9 +694,8 @@ def bot(op):
                                      "STKPKGID": "1",
                                      "STKVER": "100" }
                      anu = cl.sendMessage(msg)
-		     balas = [cName + "Pc aja . Gausah tag"]
-                     ret_ = (anu) + (balas)
-                     name = re.findall(r'@(\w+)', msg.contentMetadata)
+                     ret_ = (anu)
+                     name = re.findall(r'@(\w+)', msg)
                      mention = ast.literal_eval(msg.contentMetadata['MENTION'])
                      mentionees = mention['MENTIONEES']
                      for mention in mentionees:
