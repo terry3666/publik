@@ -694,7 +694,7 @@ def bot(op):
                                      "STKPKGID": "1",
                                      "STKVER": "100" }
                      balas = cl.sendMessage(msg)
-                     ret_ = (balas)
+                     ret_ = "Auto respon" +  (balas)
                      name = re.findall(r'@(\w+)', msg.text)
                      mention = ast.literal_eval(msg.contentMetadata['MENTION'])
                      mentionees = mention['MENTIONEES']
