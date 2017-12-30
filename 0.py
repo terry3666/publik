@@ -900,10 +900,10 @@ def bot(op):
                 cl.inviteIntoGroup(msg.to,[midd])
             elif msg.text in ["Respontag on","Autorespon:on","Respon on","Respon:on"]:
                 wait["detectMention"] = True
-                cl.sendText(msg.to,"Auto respon tag On")
+                cl.sendText(msg.to,"ヽ(・∀・)ノ")
             elif msg.text in ["Respontag off","Autorespon:off","Respon off","Respon:off"]:
                 wait["detectMention"] = False
-                cl.sendText(msg.to,"Auto respon tag Off")
+                cl.sendText(msg.to,"(・ω・）")
             elif "Siri:invite " in msg.text:
                 midd = msg.text.replace("Siri:invite ","")
                 ki.findAndAddContactsByMid(midd)
@@ -918,9 +918,18 @@ def bot(op):
                 kc.inviteIntoGroup(msg.to,[midd])
             elif msg.text in ["Creator"]:
                 msg.contentType = 13
-                cl.sendText(msg.to, "F̳͉̼͉̙͔͈͕̂̉̇e̮̟͈̣̖̰̩̹͈̾ͨ̑͑r̼̯̤̗̲̞̥̈ͭ̃ͨ̆s̪̭̱̼̼̉̈́ͪ͋̽̚b͎̣̫͈̥̗͒͌̃͑̔̾ͅo̜̓̇ͫ̉͊ͨt̘̟̼̉̈́͐͋͌̊")
+                ki.sendText(msg.to, "F̳͉̼͉̙͔͈͕̂̉̇e̮̟͈̣̖̰̩̹͈̾ͨ̑͑r̼̯̤̗̲̞̥̈ͭ̃ͨ̆s̪̭̱̼̼̉̈́ͪ͋̽̚b͎̣̫͈̥̗͒͌̃͑̔̾ͅo̜̓̇ͫ̉͊ͨt̘̟̼̉̈́͐͋͌̊")
                 msg.contentMetadata = {'mid': mid}
-                cl.sendMessage(msg)
+                ki.sendMessage(msg)
+                kk.sendText(msg.to, "F̳͉̼͉̙͔͈͕̂̉̇e̮̟͈̣̖̰̩̹͈̾ͨ̑͑r̼̯̤̗̲̞̥̈ͭ̃ͨ̆s̪̭̱̼̼̉̈́ͪ͋̽̚b͎̣̫͈̥̗͒͌̃͑̔̾ͅo̜̓̇ͫ̉͊ͨt̘̟̼̉̈́͐͋͌̊")
+                msg.contentMetadata = {'mid': mid}
+                kk.sendMessage(msg)
+                kc.sendText(msg.to, "F̳͉̼͉̙͔͈͕̂̉̇e̮̟͈̣̖̰̩̹͈̾ͨ̑͑r̼̯̤̗̲̞̥̈ͭ̃ͨ̆s̪̭̱̼̼̉̈́ͪ͋̽̚b͎̣̫͈̥̗͒͌̃͑̔̾ͅo̜̓̇ͫ̉͊ͨt̘̟̼̉̈́͐͋͌̊")
+                msg.contentMetadata = {'mid': mid}
+                kc.sendMessage(msg)
+                kb.sendText(msg.to, "F̳͉̼͉̙͔͈͕̂̉̇e̮̟͈̣̖̰̩̹͈̾ͨ̑͑r̼̯̤̗̲̞̥̈ͭ̃ͨ̆s̪̭̱̼̼̉̈́ͪ͋̽̚b͎̣̫͈̥̗͒͌̃͑̔̾ͅo̜̓̇ͫ̉͊ͨt̘̟̼̉̈́͐͋͌̊")
+                msg.contentMetadata = {'mid': mid}
+                kb.sendMessage(msg)
             elif msg.text in ["Bot"]:
                 msg.contentType = 13
                 msg.contentMetadata = {'mid': Amid}
@@ -1933,10 +1942,10 @@ def bot(op):
                     cl.sendMessage(msg)
 #-----------------------------------------------
             elif msg.text in ["Respon","respon"]:
-                ki.sendText(msg.to,"F̳͉̼͉̙͔͈͕̂̉̇e̮̟͈̣̖̰̩̹͈̾ͨ̑͑r̼̯̤̗̲̞̥̈ͭ̃ͨ̆s̪̭̱̼̼̉̈́ͪ͋̽̚b͎̣̫͈̥̗͒͌̃͑̔̾ͅo̜̓̇ͫ̉͊ͨt̘̟̼̉̈́͐͋͌̊")
-                kk.sendText(msg.to,"F̳͉̼͉̙͔͈͕̂̉̇e̮̟͈̣̖̰̩̹͈̾ͨ̑͑r̼̯̤̗̲̞̥̈ͭ̃ͨ̆s̪̭̱̼̼̉̈́ͪ͋̽̚b͎̣̫͈̥̗͒͌̃͑̔̾ͅo̜̓̇ͫ̉͊ͨt̘̟̼̉̈́͐͋͌̊")
-                kc.sendText(msg.to,"F̳͉̼͉̙͔͈͕̂̉̇e̮̟͈̣̖̰̩̹͈̾ͨ̑͑r̼̯̤̗̲̞̥̈ͭ̃ͨ̆s̪̭̱̼̼̉̈́ͪ͋̽̚b͎̣̫͈̥̗͒͌̃͑̔̾ͅo̜̓̇ͫ̉͊ͨt̘̟̼̉̈́͐͋͌̊")
-                kb.sendText(msg.to,"F̳͉̼͉̙͔͈͕̂̉̇e̮̟͈̣̖̰̩̹͈̾ͨ̑͑r̼̯̤̗̲̞̥̈ͭ̃ͨ̆s̪̭̱̼̼̉̈́ͪ͋̽̚b͎̣̫͈̥̗͒͌̃͑̔̾ͅo̜̓̇ͫ̉͊ͨt̘̟̼̉̈́͐͋͌̊")
+                ki.sendText(msg.to,"ParryV10")
+                kk.sendText(msg.to,"RakkoV10")
+                kc.sendText(msg.to,"ElizaV10")
+                kb.sendText(msg.to,"Doctor.A")
 #-----------------------------------------------
 
             elif msg.text in ["Sp","Speed","speed"]:
