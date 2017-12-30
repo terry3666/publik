@@ -362,7 +362,7 @@ def summon(to, nama):
 def waktu(secs):
     mins, secs = divmod(secs,60)
     hours, mins = divmod(mins,60)
-    return '%02d Jam %02d Menit %02d Detik' % (hours, mins, secs)      
+    return '%02d Hours %02d Minute %02d Seconds' % (hours, mins, secs)      
 
 def cms(string, commands): #/XXX, >XXX, ;XXX, ^XXX, %XXX, $XXX...
     tex = ["+","@","/",">",";","^","%","$","＾","サテラ:","サテラ:","サテラ：","サテラ："]
@@ -865,7 +865,7 @@ def bot(op):
                 kc.inviteIntoGroup(msg.to,[midd])
             elif msg.text in ["Creator"]:
                 msg.contentType = 13
-                cl.sendText(msg.to, "✍️T̸̡̛̎ͬͩ̀̂̿́́̾͌̃̋̀́̚͟͜Σ̸̸̲͔̲͖̞̈͑ͦͬ̈ͫ̈́̈́̐̾ͣ́̒Δ̣̰͆͢͡͞M̸̨̧̉́͘͢ ̢̠̮̰̼̈͒̋̊͆̌̐̌ͫ̂ͧ͋ͭͪ̈́͜J̠͂̽̂̏̄͆̌̐̎̾Ω̷̨̨̖̘̹ͬ́́͢͞Ҝ̛̭ͯ͌͒ͭͨ̂̏̔̚͝Σ̯͇̳͕͔ͩͣR̶̬͕̬̟̎ͩ̅͛̽ͤ̇̊ͧ͊͛̚̕͞҉̛̛͘͠͏̵ ̟̮̰̒̒ͣ̀̄̂̔͒̔͋̚͜͝͡β̴̨̛ͫͫ̄͊́̚Ω̫̈ͤ́̋ͩ͂̄̀ͥ͛ͥ̒̈́̇̚Ţ̵̸̸̡̛̲̩̐͛ͦ͌̃̓ͩ̃̏̓ͨ̄̓͆̀̕̕͞͞͠S̳̪̘̒̐̑ͧͦ͏̵̛̀̕͡͡ ✈")
+                cl.sendText(msg.to, "F̳͉̼͉̙͔͈͕̂̉̇e̮̟͈̣̖̰̩̹͈̾ͨ̑͑r̼̯̤̗̲̞̥̈ͭ̃ͨ̆s̪̭̱̼̼̉̈́ͪ͋̽̚b͎̣̫͈̥̗͒͌̃͑̔̾ͅo̜̓̇ͫ̉͊ͨt̘̟̼̉̈́͐͋͌̊")
                 msg.contentMetadata = {'mid': mid}
                 cl.sendMessage(msg)
             elif msg.text in ["Bot"]:
@@ -1044,9 +1044,9 @@ def bot(op):
                 else:
                     wait["linkprotect"] = False
                     if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"Protection Qr already Off")
+                        cl.sendText(msg.to,"Sensi already Off")
                     else:
-                        cl.sendText(msg.to,"Protection Qr already Off")
+                        cl.sendText(msg.to,"Sensi already Off")
             elif msg.text in ["Easy on"]:
                 if wait["protecteasy"] == True:
                     if wait["lang"] == "JP":
@@ -1294,9 +1294,8 @@ def bot(op):
 
             elif msg.text.lower() == 'runtime':
                 eltime = time.time() - mulai
-                van = "「Bot aktif selama」"+waktu(eltime)
+                van = "вσт нαѕ яυииιиg"+waktu(eltime)
                 cl.sendText(msg.to,van)
-
 #------------------------------------------------------------#
                         
             elif msg.text.lower() == 'runtime':
@@ -1305,7 +1304,7 @@ def bot(op):
                 cl.sendText(msg.to,van)
 
             elif msg.text in ["Restart"]:
-                cl.sendText(msg.to, "「Bot has been restarted」")
+                cl.sendText(msg.to, "「вσт нαѕ вєєи яєѕтαятє∂」")
                 restart_program()
                 print "@Restart"
 
@@ -1882,7 +1881,7 @@ def bot(op):
 
             elif msg.text in ["Sp","Speed","speed"]:
                 start = time.time()
-                cl.sendText(msg.to, "R҉e҉d҉i҉r҉e҉c҉t҉i҉n҉g҉...")
+                cl.sendText(msg.to, "¢σℓℓє¢тιиg")
                 elapsed_time = time.time() - start
                 cl.sendText(msg.to, "%sseconds" % (elapsed_time))
 
