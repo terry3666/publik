@@ -96,6 +96,7 @@ wait = {
     'autoAdd':False,
     'message':"Hmmm ngeadd",
     "lang":"JP",
+    "UpdateName":True,
     "commentOn":False,
     "commentBlack":{},
     "wblack":False,
@@ -1251,7 +1252,7 @@ def bot(op):
                     
             elif msg.text == "Lurking":
                 if msg.toType == 2:
-                    cl.sendText(msg.to, "Set reading point:" + datetime.datetime.today().strftime('\n%Y-%m-%d %H:%M:%S'))
+                    cl.sendText(msg.to, "Set reading point:" + datetime.today().strftime('\n%Y-%m-%d %H:%M:%S'))
                     try:
                         del wait2['readPoint'][msg.to]
                         del wait2['readMember'][msg.to]
@@ -1259,7 +1260,7 @@ def bot(op):
                         pass
                         wait2['readPoint'][msg.to] = msg.id
                         wait2['readMember'][msg.to] = ""
-                        wait2['setTime'][msg.to] = datetime.datetime.today().strftime('%Y-%m-%d %H:%M:%S')
+                        wait2['setTime'][msg.to] = datetime.today().strftime('%Y-%m-%d %H:%M:%S')
                         wait2['ROM'][msg.to] = {}
                         print wait2
                         
@@ -1283,10 +1284,10 @@ def bot(op):
                             pass
                         wait2['readPoint'][msg.to] = msg.id
                         wait2['readMember'][msg.to] = ""
-                        wait2['setTime'][msg.to] = datetime.datetime.today().strftime('%Y-%m-%d %H:%M:%S')
+                        wait2['setTime'][msg.to] = datetime.today().strftime('%Y-%m-%d %H:%M:%S')
                         wait2['ROM'][msg.to] = {}
                         print wait
-                        cl.sendText(msg.to, "Auto set reading point in:" + datetime.datetime.today().strftime('\n%Y-%m-%d %H:%M:%S'))
+                        cl.sendText(msg.to, "Auto set reading point in:" + datetime.today().strftime('\n%Y-%m-%d %H:%M:%S'))
                     else:
                         cl.sendText(msg.to, "Reading point has not been set.")
 #-----------------------------------------------
