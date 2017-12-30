@@ -72,7 +72,7 @@ helpMessage =""" 「ѕєℓf ¢σммαи∂」
 「ѕєт」
 「ѕι∂єя」
 「яυитιмє」
-「у/σ」
+「ѕιяι/вує」
 「кιℓℓ」 
 「¢ℓєαиѕє」 
 「ик @」
@@ -929,6 +929,8 @@ def bot(op):
                 cl.sendMessage(msg)
                 msg.contentMetadata = {'mid': Dmid}
                 cl.sendMessage(msg)
+                msg.contentMetadata = {'mid': Emid}
+                cl.sendMessage(msg)
             elif msg.text in ["cancel","Cancel"]:
                 if msg.toType == 2:
                     X = cl.getGroup(msg.to)
@@ -1231,47 +1233,47 @@ def bot(op):
                 return
             elif msg.text in ["Info"]:
                 md = ""
-                if wait["contact"] == True: md+=" 「❧¢σитα¢т : σи」\n"
-                else: md+=" 「❧¢σитα¢т : σff」\n"
-                if wait["linkprotect"] == True: md+=" 「❧ѕєиѕι : σи」\n"
-                else: md+=" 「❧ѕєиѕι : σff」\n"
-                if wait["Protectjoin"] == True: md+=" 「❧кι¢кʝσιи : σи」\n"
-                else: md+=" 「❧кι¢кʝσιи : σff」\n"
-		if wait["detectMention"] == True: md+=" 「❧тαg : σи」\n"
-                else: md+=" 「❧тαg : σff」\n"
-                if wait["protecteasy"] == True: md+=" 「❧єαѕу : σи」\n"
-                else: md+=" 「❧єαѕу : σff」\n"
+                if wait["contact"] == True: md+=" 「❧¢σитα¢т : ヽ(・∀・)ノ」\n"
+                else: md+=" 「❧¢σитα¢т : (・ω・）」\n"
+                if wait["linkprotect"] == True: md+=" 「❧ѕєиѕι : ヽ(・∀・)ノ」\n"
+                else: md+=" 「❧ѕєиѕι : (・ω・）」\n"
+                if wait["Protectjoin"] == True: md+=" 「❧кι¢кʝσιи : ヽ(・∀・)ノ」\n"
+                else: md+=" 「❧кι¢кʝσιи : (・ω・）」\n"
+		if wait["detectMention"] == True: md+=" 「❧тαg : ヽ(・∀・)ノ」\n"
+                else: md+=" 「❧тαg : (・ω・）」\n"
+                if wait["protecteasy"] == True: md+=" 「❧єαѕу : ヽ(・∀・)ノ」\n"
+                else: md+=" 「❧єαѕу : (・ω・）」\n"
                 if wait["autoJoin"] == True: md+=" 「❧αυтσ ʝσιи : σи」\n"
-                else: md +=" 「❧αυтσ ʝσιи : σff」\n"
-                if wait["autoCancel"]["on"] == True:md+=" 「❧gяσυρ ¢αи¢єℓ :" + str(wait["autoCancel"]["members"]) + "」\n"
-                else: md+= " 「❧gяσυρ ¢αи¢єℓ : σff」\n"
-                if wait["leaveRoom"] == True: md+=" 「❧αυтσ ℓєανє : σи」\n"
-                else: md+=" 「❧αυтσ ℓєανє : σff」\n"
-                if wait["autoAdd"] == True: md+=" 「❧αυтσ α∂∂ : σи」\n"
-                else:md+=" 「❧αυтσ α∂∂ : σff」\n"
+                else: md +=" 「❧αυтσ ʝσιи : (・ω・）」\n"
+                if wait["autoCancel"]["on"] == True:md+=" 「❧gяσυρ ¢αи¢єℓ : ヽ(・∀・)ノ" + str(wait["autoCancel"]["members"]) + "」\n"
+                else: md+= " 「❧gяσυρ ¢αи¢єℓ : (・ω・）」\n"
+                if wait["leaveRoom"] == True: md+=" 「❧αυтσ ℓєανє : ヽ(・∀・)ノ」\n"
+                else: md+=" 「❧αυтσ ℓєανє : (・ω・）」\n"
+                if wait["autoAdd"] == True: md+=" 「❧αυтσ α∂∂ : ヽ(・∀・)ノ」\n"
+                else:md+=" 「❧αυтσ α∂∂ : (・ω・）」\n"
                 cl.sendText(msg.to,md)
             elif msg.text in ["è‡ªå‹•è¿½åŠ :ã‚ªãƒ³","Add on","Auto add:on","è‡ªå‹•è¿½åŠ ï¼šé–‹"]:
                 if wait["autoAdd"] == True:
                     if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"already on")
+                        cl.sendText(msg.to,"ヽ(・∀・)ノ")
                     else:
-                        cl.sendText(msg.to,"done")
+                        cl.sendText(msg.to,"ヽ(・∀・)ノ")
                 else:
                     wait["autoAdd"] = True
                     if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"done")
+                        cl.sendText(msg.to,"ヽ(・∀・)ノ")
                     else:
                         cl.sendText(msg.to,"è¦äº†å¼€ã€‚")
             elif msg.text in ["è‡ªå‹•è¿½åŠ :ã‚ªãƒ•","Add off","Auto add:off","è‡ªå‹•è¿½åŠ ï¼šé—œ"]:
                 if wait["autoAdd"] == False:
                     if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"already off")
+                        cl.sendText(msg.to,"(・ω・）")
                     else:
-                        cl.sendText(msg.to,"done")
+                        cl.sendText(msg.to,"(・ω・）")
                 else:
                     wait["autoAdd"] = False
                     if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"done")
+                        cl.sendText(msg.to,"(・ω・）")
                     else:
                         cl.sendText(msg.to,"è¦äº†å…³æ–­ã€‚")
             elif "Message change: " in msg.text:
@@ -1291,7 +1293,7 @@ def bot(op):
 
             elif msg.text in ["Set"]:
                  if msg.toType == 2:
-                    cl.sendText(msg.to, "Check")
+                    cl.sendText(msg.to, "(ノ＾ω＾)ハ(＾ω＾ )ノ")
                     try:
                         del wait2['readPoint'][msg.to]
                         del wait2['readMember'][msg.to]
@@ -1363,7 +1365,7 @@ def bot(op):
 
 #-----------------------------------------------
 
-            elif msg.text in ["Y"]:
+            elif msg.text in ["Siri"]:
                         G = cl.getGroup(msg.to)
                         ginfo = cl.getGroup(msg.to)
                         G.preventJoinByTicket = False
@@ -1420,30 +1422,18 @@ def bot(op):
                         kc.updateGroup(G)
 #-----------------------------------------------
 #-----------------------------------------------
-            elif msg.text in ["O"]:
+            elif msg.text in ["Bye"]:
                 if msg.toType == 2:
                     ginfo = cl.getGroup(msg.to)
                     try:
+			ki.sendText(msg.to,"\(´ー｀)┌")
                         ki.leaveGroup(msg.to)
                         kk.leaveGroup(msg.to)
                         kc.leaveGroup(msg.to)
                         kb.leaveGroup(msg.to)
                     except:
                         pass
-            elif msg.text in ["Bye"]:
-                if msg.toType == 2:
-                    ginfo = cl.getGroup(msg.to)
-                    try:
-                        cl.leaveGroup(msg.to)
-                    except:
-                        pass
-            elif msg.text in ["Out"]:
-                if msg.toType == 2:
-                    ginfo = cl.getGroup(msg.to)
-                    try:
-                        ke.leaveGroup(msg.to)
-                    except:
-                        pass
+
 #-----------------------------------------------
             elif msg.text in ["Kill"]:
                 if msg.toType == 2:
