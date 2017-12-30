@@ -1458,7 +1458,7 @@ def bot(op):
                         return
                     for jj in matched_list:
                         try:
-                            klist=[ki,kk,kc]
+                            klist=[ki,kk,kc,kb]
                             kicker=random.choice(klist)
                             kicker.kickoutFromGroup(msg.to,[jj])
                             print (msg.to,[jj])
@@ -1477,7 +1477,7 @@ def bot(op):
                     ki.sendText(msg.to,"Just some casual cleansing ô")
                     kk.sendText(msg.to,"Just some casual cleansing ô")
                     kc.sendText(msg.to,"Just some casual cleansing ô")
-		    kc.sendText(msg.to,"Just some casual cleansing ô")
+		    kb.sendText(msg.to,"Just some casual cleansing ô")
                     targets = []
                     for g in gs.members:
                         if _name in g.displayName:
@@ -2106,8 +2106,8 @@ def nameUpdate():
                 profile5.displayName = wait["cName5"]
                 ke.updateProfile(profile5)
 
-                profile5 = kb.getProfile()
-                profile5.displayName = wait["cName6"]
+                profile6 = kb.getProfile()
+                profile6.displayName = wait["cName6"]
                 kb.updateProfile(profile6)
             time.sleep(600)
         except:
