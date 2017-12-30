@@ -45,9 +45,10 @@ sys.setdefaultencoding('utf-8')
 
 helpMessage =""" 「ѕєℓf ¢σммαи∂」
 
-
+「ѕιяι:нєℓρ」
+「ѕιяι:кι¢к」
 「¢яєαтσя」
-「gи」
+「ѕιяι:gи」
 「кι¢к мι∂」
 「¢αи¢єℓ」
 「gυяℓ」
@@ -55,7 +56,7 @@ helpMessage =""" 「ѕєℓf ¢σммαи∂」
 「ι∂」
 「мι∂」
 「м¢ мι∂」 
-「ιиfσ」
+「ѕιяι:ιиfσ」
 「g¢αи¢єℓ:σи/σff」
 「ѕαиgєιи: @」
 「мєѕѕαgє ¢нαиgє: тєχт」
@@ -69,6 +70,7 @@ helpMessage =""" 「ѕєℓf ¢σммαи∂」
 「¢σммєит ωℓ」 
 「¢σммєит」
 「вℓ ¢σиfιям」
+「ѕιяι:ιиνιтє」
 「ѕєт」
 「ѕι∂єя」
 「яυитιмє」
@@ -847,22 +849,22 @@ def bot(op):
                                         ki.updateGroup(gs)
             elif msg.text is None:
                 return
-            elif msg.text in ["Key","help","Help"]:
+            elif msg.text in ["Siri:help"]:
                 if wait["lang"] == "JP":
                     cl.sendText(msg.to,helpMessage)
                 else:
                     cl.sendText(msg.to,helpt)
-            elif ("Gn " in msg.text):
+            elif (":Gn " in msg.text):
                 if msg.toType == 2:
                     X = cl.getGroup(msg.to)
                     X.name = msg.text.replace("Gn ","")
                     cl.updateGroup(X)
                 else:
                     cl.sendText(msg.to,"It can't be used besides the group.")
-            elif ("Cv1 gn " in msg.text):
+            elif ("Siri:gn " in msg.text):
                 if msg.toType == 2:
                     X = cl.getGroup(msg.to)
-                    X.name = msg.text.replace("Cv1 gn ","")
+                    X.name = msg.text.replace("Siri:gn ","")
                     ki.updateGroup(X)
                 else:
                     ki.sendText(msg.to,"It can't be used besides the group.")
@@ -883,8 +885,8 @@ def bot(op):
             elif "Kick " in msg.text:
                 midd = msg.text.replace("Kick ","")
                 cl.kickoutFromGroup(msg.to,[midd])
-            elif "Cv1 kick " in msg.text:
-                midd = msg.text.replace("Cv1 kick ","")
+            elif "Siri:kick " in msg.text:
+                midd = msg.text.replace("Siri:kick ","")
                 ki.kickoutFromGroup(msg.to,[midd])
             elif "Cv2 kick " in msg.text:
                 midd = msg.text.replace("Cv2 kick ","")
@@ -902,8 +904,8 @@ def bot(op):
             elif msg.text in ["Respontag off","Autorespon:off","Respon off","Respon:off"]:
                 wait["detectMention"] = False
                 cl.sendText(msg.to,"Auto respon tag Off")
-            elif "Cv1 invite " in msg.text:
-                midd = msg.text.replace("Cv1 invite ","")
+            elif "Siri:invite " in msg.text:
+                midd = msg.text.replace("Siri:invite ","")
                 ki.findAndAddContactsByMid(midd)
                 ki.inviteIntoGroup(msg.to,[midd])
             elif "Cv2 invite " in msg.text:
@@ -1231,7 +1233,7 @@ def bot(op):
                                         ki.updateGroup(gs)
             elif msg.text is None:
                 return
-            elif msg.text in ["Info"]:
+            elif msg.text in ["Siri:info"]:
                 md = ""
                 if wait["contact"] == True: md+=" 「❧¢σитα¢т : ヽ(・∀・)ノ」\n"
                 else: md+=" 「❧¢σитα¢т : (・ω・）」\n"
