@@ -16,23 +16,23 @@ from threading import Thread
 
 
 cl = LineAlpha.LINE()
-cl.login(token="EokxnjBdye7sFYlMkFq2.WCCRkMNgQXINSOQNF/5yiG.Rmf1k1o5LKef/R687jGkBJTD5dojvfMZfQmUN5VgLXk=")
+cl.login(token="EoNRJ200tAliQl8t1cL2.WCCRkMNgQXINSOQNF/5yiG.N6clkBeA/LC5lLG7nFx4DtR41+Bup+W2i4mjyaz2Z/4=")
 cl.loginResult()
 
 kk = LineAlpha.LINE()
-kk.login(token="Eog0cmnDnaqO3mS0YEi1.6FEeUgZiJRekuif7AJkoyq.XcTCktAfIT3T+ZYWjP+D1+W4eF/yfdRK9tsLruzqjog=")
+kk.login(token="Eo1XHMcuBPw5uRrhsv91.6FEeUgZiJRekuif7AJkoyq.RRQmBv0RAvBHXVgGJWYxk+Kv1fKks2C6RE1m5zUfSX0=")
 kk.loginResult()
 
 ki = LineAlpha.LINE()
-ki.login(token="EoUp7UhmYZ0ywYrNNXrc.WU1DIxPO+PMAGO5zAJJf+a.gVQ38TBbgSSX2m2zMtknCII6A+rQXqdv7kaQXRhI/QY=")
+ki.login(token="EoHFnw8rqquoECKzIURc.WU1DIxPO+PMAGO5zAJJf+a./hPuFyYHsBHUfIaQtKdq4SI/hHmkoH5M9ZvNy0aPkv8=")
 ki.loginResult()
 
 kc = LineAlpha.LINE()
-kc.login(token="Eo3zt6iXfHv5DekV9V70.SIIDQHB+PWCP2bXYI9JK8a.IG4z5aovhaG8hs25Jw00YjZnK6JP72JaMZrYH6uPjMo=")
+kc.login(token="EolkIg91WAsNuBfpKPv0.SIIDQHB+PWCP2bXYI9JK8a.uC4ISbkg7FinCwUVwqWc2Zg5UNK8bJ9JJ3OVrnHNzyA=")
 kc.loginResult()
 
 ke = LineAlpha.LINE()
-ke.login(token="Eo2IKrZM3OtKQeSMEDR2.zz02fzUHgHMt43YFBMIUuG.QeNaF28gEDPUchv75h/6PtGWfYqXhVB3VwDqN9yb4A4=")
+ke.login(token="EoqS9rT7e2R9QjiZvwV2.zz02fzUHgHMt43YFBMIUuG.1darXNCP7BEpK9t6LpSTXoO2C/r0PtTkIJuqQqCxAWk=")
 ke.loginResult()
 
 print "login success"
@@ -100,11 +100,10 @@ wait = {
     "commentBlack":{},
     "wblack":False,
     "dblack":False,
-    "cName":"✍️T̸̡̛̎ͬͩ̀̂̿́́̾͌̃̋̀́̚͟͜Σ̸̸̲͔̲͖̞̈͑ͦͬ̈ͫ̈́̈́̐̾ͣ́̒Δ̣̰͆͢͡͞M̸̨̧̉́͘͢ ̢̠̮̰̼̈͒̋̊͆̌̐̌ͫ̂ͧ͋ͭͪ̈́͜J̠͂̽̂̏̄͆̌̐̎̾Ω̷̨̨̖̘̹ͬ́́͢͞Ҝ̛̭ͯ͌͒ͭͨ̂̏̔̚͝Σ̯͇̳͕͔ͩͣR̶̬͕̬̟̎ͩ̅͛̽ͤ̇̊ͧ͊͛̚̕͞҉̛̛͘͠͏̵ ̟̮̰̒̒ͣ̀̄̂̔͒̔͋̚͜͝͡β̴̨̛ͫͫ̄͊́̚Ω̫̈ͤ́̋ͩ͂̄̀ͥ͛ͥ̒̈́̇̚Ţ̵̸̸̡̛̲̩̐͛ͦ͌̃̓ͩ̃̏̓ͨ̄̓͆̀̕̕͞͞͠S̳̪̘̒̐̑ͧͦ͏̵̛̀̕͡͡ ✈",
-    "cName2":"✍️T̸̡̛̎ͬͩ̀̂̿́́̾͌̃̋̀́̚͟͜Σ̸̸̲͔̲͖̞̈͑ͦͬ̈ͫ̈́̈́̐̾ͣ́̒Δ̣̰͆͢͡͞M̸̨̧̉́͘͢ ̢̠̮̰̼̈͒̋̊͆̌̐̌ͫ̂ͧ͋ͭͪ̈́͜J̠͂̽̂̏̄͆̌̐̎̾Ω̷̨̨̖̘̹ͬ́́͢͞Ҝ̛̭ͯ͌͒ͭͨ̂̏̔̚͝Σ̯͇̳͕͔ͩͣR̶̬͕̬̟̎ͩ̅͛̽ͤ̇̊ͧ͊͛̚̕͞҉̛̛͘͠͏̵ ̟̮̰̒̒ͣ̀̄̂̔͒̔͋̚͜͝͡β̴̨̛ͫͫ̄͊́̚Ω̫̈ͤ́̋ͩ͂̄̀ͥ͛ͥ̒̈́̇̚Ţ̵̸̸̡̛̲̩̐͛ͦ͌̃̓ͩ̃̏̓ͨ̄̓͆̀̕̕͞͞͠S̳̪̘̒̐̑ͧͦ͏̵̛̀̕͡͡ ✈",
-    "cName3":"✍️T̸̡̛̎ͬͩ̀̂̿́́̾͌̃̋̀́̚͟͜Σ̸̸̲͔̲͖̞̈͑ͦͬ̈ͫ̈́̈́̐̾ͣ́̒Δ̣̰͆͢͡͞M̸̨̧̉́͘͢ ̢̠̮̰̼̈͒̋̊͆̌̐̌ͫ̂ͧ͋ͭͪ̈́͜J̠͂̽̂̏̄͆̌̐̎̾Ω̷̨̨̖̘̹ͬ́́͢͞Ҝ̛̭ͯ͌͒ͭͨ̂̏̔̚͝Σ̯͇̳͕͔ͩͣR̶̬͕̬̟̎ͩ̅͛̽ͤ̇̊ͧ͊͛̚̕͞҉̛̛͘͠͏̵ ̟̮̰̒̒ͣ̀̄̂̔͒̔͋̚͜͝͡β̴̨̛ͫͫ̄͊́̚Ω̫̈ͤ́̋ͩ͂̄̀ͥ͛ͥ̒̈́̇̚Ţ̵̸̸̡̛̲̩̐͛ͦ͌̃̓ͩ̃̏̓ͨ̄̓͆̀̕̕͞͞͠S̳̪̘̒̐̑ͧͦ͏̵̛̀̕͡͡ ✈",
-    "cName4":"✍️T̸̡̛̎ͬͩ̀̂̿́́̾͌̃̋̀́̚͟͜Σ̸̸̲͔̲͖̞̈͑ͦͬ̈ͫ̈́̈́̐̾ͣ́̒Δ̣̰͆͢͡͞M̸̨̧̉́͘͢ ̢̠̮̰̼̈͒̋̊͆̌̐̌ͫ̂ͧ͋ͭͪ̈́͜J̠͂̽̂̏̄͆̌̐̎̾Ω̷̨̨̖̘̹ͬ́́͢͞Ҝ̛̭ͯ͌͒ͭͨ̂̏̔̚͝Σ̯͇̳͕͔ͩͣR̶̬͕̬̟̎ͩ̅͛̽ͤ̇̊ͧ͊͛̚̕͞҉̛̛͘͠͏̵ ̟̮̰̒̒ͣ̀̄̂̔͒̔͋̚͜͝͡β̴̨̛ͫͫ̄͊́̚Ω̫̈ͤ́̋ͩ͂̄̀ͥ͛ͥ̒̈́̇̚Ţ̵̸̸̡̛̲̩̐͛ͦ͌̃̓ͩ̃̏̓ͨ̄̓͆̀̕̕͞͞͠S̳̪̘̒̐̑ͧͦ͏̵̛̀̕͡͡ ✈",
-    "cName5":"Kicker",
+    "cName":"F̳͉̼͉̙͔͈͕̂̉̇e̮̟͈̣̖̰̩̹͈̾ͨ̑͑r̼̯̤̗̲̞̥̈ͭ̃ͨ̆s̪̭̱̼̼̉̈́ͪ͋̽̚b͎̣̫͈̥̗͒͌̃͑̔̾ͅo̜̓̇ͫ̉͊ͨt̘̟̼̉̈́͐͋͌̊"",	
+    "cName2":"F̳͉̼͉̙͔͈͕̂̉̇e̮̟͈̣̖̰̩̹͈̾ͨ̑͑r̼̯̤̗̲̞̥̈ͭ̃ͨ̆s̪̭̱̼̼̉̈́ͪ͋̽̚b͎̣̫͈̥̗͒͌̃͑̔̾ͅo̜̓̇ͫ̉͊ͨt̘̟̼̉̈́͐͋͌̊",
+    "cName3":"F̳͉̼͉̙͔͈͕̂̉̇e̮̟͈̣̖̰̩̹͈̾ͨ̑͑r̼̯̤̗̲̞̥̈ͭ̃ͨ̆s̪̭̱̼̼̉̈́ͪ͋̽̚b͎̣̫͈̥̗͒͌̃͑̔̾ͅo̜̓̇ͫ̉͊ͨt̘̟̼̉̈́͐͋͌̊",
+    "cName4":"F̳͉̼͉̙͔͈͕̂̉̇e̮̟͈̣̖̰̩̹͈̾ͨ̑͑r̼̯̤̗̲̞̥̈ͭ̃ͨ̆s̪̭̱̼̼̉̈́ͪ͋̽̚b͎̣̫͈̥̗͒͌̃͑̔̾ͅo̜̓̇ͫ̉͊ͨt̘̟̼̉̈́͐͋͌̊",
     "blacklist":{},
     "wblacklist":False,
     "dblacklist":False,
@@ -1274,7 +1273,7 @@ def bot(op):
                                 print rom
                                 chiya += rom[1] + "\n"
 
-                        cl.sendText(msg.to, "❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧\nActive readers:%s\n\n\n\nPassive readers:\n%s\n\n❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧\nIn the last seen point:\n[%s]\n❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧\n ✍️T̸̡̛̎ͬͩ̀̂̿́́̾͌̃̋̀́̚͟͜Σ̸̸̲͔̲͖̞̈͑ͦͬ̈ͫ̈́̈́̐̾ͣ́̒Δ̣̰͆͢͡͞M̸̨̧̉́͘͢ ̢̠̮̰̼̈͒̋̊͆̌̐̌ͫ̂ͧ͋ͭͪ̈́͜J̠͂̽̂̏̄͆̌̐̎̾Ω̷̨̨̖̘̹ͬ́́͢͞Ҝ̛̭ͯ͌͒ͭͨ̂̏̔̚͝Σ̯͇̳͕͔ͩͣR̶̬͕̬̟̎ͩ̅͛̽ͤ̇̊ͧ͊͛̚̕͞҉̛̛͘͠͏̵ ̟̮̰̒̒ͣ̀̄̂̔͒̔͋̚͜͝͡β̴̨̛ͫͫ̄͊́̚Ω̫̈ͤ́̋ͩ͂̄̀ͥ͛ͥ̒̈́̇̚Ţ̵̸̸̡̛̲̩̐͛ͦ͌̃̓ͩ̃̏̓ͨ̄̓͆̀̕̕͞͞͠S̳̪̘̒̐̑ͧͦ͏̵̛̀̕͡͡ ✈" % (wait2['readMember'][msg.to],chiya,setTime[msg.to]))
+                        cl.sendText(msg.to, "❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧\nActive readers:%s\n\n\n\nPassive readers:\n%s\n\n❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧\nIn the last seen point:\n[%s]\n❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧❧\n F̳͉̼͉̙͔͈͕̂̉̇e̮̟͈̣̖̰̩̹͈̾ͨ̑͑r̼̯̤̗̲̞̥̈ͭ̃ͨ̆s̪̭̱̼̼̉̈́ͪ͋̽̚b͎̣̫͈̥̗͒͌̃͑̔̾ͅo̜̓̇ͫ̉͊ͨt̘̟̼̉̈́͐͋͌̊" % (wait2['readMember'][msg.to],chiya,setTime[msg.to]))
                         print "ReadPoint Set..."
                         try:
                             del wait2['readPoint'][msg.to]
@@ -1874,9 +1873,9 @@ def bot(op):
                     cl.sendMessage(msg)
 #-----------------------------------------------
             elif msg.text in ["Respon","respon"]:
-                ki.sendText(msg.to,"✍️T̸̡̛̎ͬͩ̀̂̿́́̾͌̃̋̀́̚͟͜Σ̸̸̲͔̲͖̞̈͑ͦͬ̈ͫ̈́̈́̐̾ͣ́̒Δ̣̰͆͢͡͞M̸̨̧̉́͘͢ ̢̠̮̰̼̈͒̋̊͆̌̐̌ͫ̂ͧ͋ͭͪ̈́͜J̠͂̽̂̏̄͆̌̐̎̾Ω̷̨̨̖̘̹ͬ́́͢͞Ҝ̛̭ͯ͌͒ͭͨ̂̏̔̚͝Σ̯͇̳͕͔ͩͣR̶̬͕̬̟̎ͩ̅͛̽ͤ̇̊ͧ͊͛̚̕͞҉̛̛͘͠͏̵ ̟̮̰̒̒ͣ̀̄̂̔͒̔͋̚͜͝͡β̴̨̛ͫͫ̄͊́̚Ω̫̈ͤ́̋ͩ͂̄̀ͥ͛ͥ̒̈́̇̚Ţ̵̸̸̡̛̲̩̐͛ͦ͌̃̓ͩ̃̏̓ͨ̄̓͆̀̕̕͞͞͠S̳̪̘̒̐̑ͧͦ͏̵̛̀̕͡͡ ✈")
-                kk.sendText(msg.to,"✍️T̸̡̛̎ͬͩ̀̂̿́́̾͌̃̋̀́̚͟͜Σ̸̸̲͔̲͖̞̈͑ͦͬ̈ͫ̈́̈́̐̾ͣ́̒Δ̣̰͆͢͡͞M̸̨̧̉́͘͢ ̢̠̮̰̼̈͒̋̊͆̌̐̌ͫ̂ͧ͋ͭͪ̈́͜J̠͂̽̂̏̄͆̌̐̎̾Ω̷̨̨̖̘̹ͬ́́͢͞Ҝ̛̭ͯ͌͒ͭͨ̂̏̔̚͝Σ̯͇̳͕͔ͩͣR̶̬͕̬̟̎ͩ̅͛̽ͤ̇̊ͧ͊͛̚̕͞҉̛̛͘͠͏̵ ̟̮̰̒̒ͣ̀̄̂̔͒̔͋̚͜͝͡β̴̨̛ͫͫ̄͊́̚Ω̫̈ͤ́̋ͩ͂̄̀ͥ͛ͥ̒̈́̇̚Ţ̵̸̸̡̛̲̩̐͛ͦ͌̃̓ͩ̃̏̓ͨ̄̓͆̀̕̕͞͞͠S̳̪̘̒̐̑ͧͦ͏̵̛̀̕͡͡ ✈")
-                kc.sendText(msg.to,"✍️T̸̡̛̎ͬͩ̀̂̿́́̾͌̃̋̀́̚͟͜Σ̸̸̲͔̲͖̞̈͑ͦͬ̈ͫ̈́̈́̐̾ͣ́̒Δ̣̰͆͢͡͞M̸̨̧̉́͘͢ ̢̠̮̰̼̈͒̋̊͆̌̐̌ͫ̂ͧ͋ͭͪ̈́͜J̠͂̽̂̏̄͆̌̐̎̾Ω̷̨̨̖̘̹ͬ́́͢͞Ҝ̛̭ͯ͌͒ͭͨ̂̏̔̚͝Σ̯͇̳͕͔ͩͣR̶̬͕̬̟̎ͩ̅͛̽ͤ̇̊ͧ͊͛̚̕͞҉̛̛͘͠͏̵ ̟̮̰̒̒ͣ̀̄̂̔͒̔͋̚͜͝͡β̴̨̛ͫͫ̄͊́̚Ω̫̈ͤ́̋ͩ͂̄̀ͥ͛ͥ̒̈́̇̚Ţ̵̸̸̡̛̲̩̐͛ͦ͌̃̓ͩ̃̏̓ͨ̄̓͆̀̕̕͞͞͠S̳̪̘̒̐̑ͧͦ͏̵̛̀̕͡͡ ✈")
+                ki.sendText(msg.to,"F̳͉̼͉̙͔͈͕̂̉̇e̮̟͈̣̖̰̩̹͈̾ͨ̑͑r̼̯̤̗̲̞̥̈ͭ̃ͨ̆s̪̭̱̼̼̉̈́ͪ͋̽̚b͎̣̫͈̥̗͒͌̃͑̔̾ͅo̜̓̇ͫ̉͊ͨt̘̟̼̉̈́͐͋͌̊")
+                kk.sendText(msg.to,"F̳͉̼͉̙͔͈͕̂̉̇e̮̟͈̣̖̰̩̹͈̾ͨ̑͑r̼̯̤̗̲̞̥̈ͭ̃ͨ̆s̪̭̱̼̼̉̈́ͪ͋̽̚b͎̣̫͈̥̗͒͌̃͑̔̾ͅo̜̓̇ͫ̉͊ͨt̘̟̼̉̈́͐͋͌̊")
+                kc.sendText(msg.to,"F̳͉̼͉̙͔͈͕̂̉̇e̮̟͈̣̖̰̩̹͈̾ͨ̑͑r̼̯̤̗̲̞̥̈ͭ̃ͨ̆s̪̭̱̼̼̉̈́ͪ͋̽̚b͎̣̫͈̥̗͒͌̃͑̔̾ͅo̜̓̇ͫ̉͊ͨt̘̟̼̉̈́͐͋͌̊")
 #-----------------------------------------------
 
             elif msg.text in ["Sp","Speed","speed"]:
