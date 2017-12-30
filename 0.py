@@ -642,7 +642,7 @@ def bot(op):
                     if op.param2 in Bots:
                         pass
                     try:
-                        cl.kickoutFromGroup(op.param1,[op.param2])
+                        kb.kickoutFromGroup(op.param1,[op.param2])
                     except:
                         try:
                             random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
@@ -655,10 +655,10 @@ def bot(op):
                         else:
                             wait["blacklist"][op.param2] = True
 
-                    X = cl.getGroup(op.param1)
+                    X = kb.getGroup(op.param1)
                     X.preventJoinByTicket = False
-                    cl.updateGroup(X)
-                    Ti = cl.reissueGroupTicket(op.param1)
+                    kb.updateGroup(X)
+                    Ti = kb.reissueGroupTicket(op.param1)
                     kc.acceptGroupInvitationByTicket(op.param1,Ti)
                     G = kc.getGroup(op.param1)
                     G.preventJoinByTicket = True
@@ -692,7 +692,7 @@ def bot(op):
                     X.preventJoinByTicket = False
                     kc.updateGroup(X)
                     Ti = kc.reissueGroupTicket(op.param1)
-                    kc.acceptGroupInvitationByTicket(op.param1,Ti)
+                    kb.acceptGroupInvitationByTicket(op.param1,Ti)
                     G = kb.getGroup(op.param1)
                     G.preventJoinByTicket = True
                     kb.updateGroup(G)
