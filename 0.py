@@ -107,7 +107,7 @@ wait = {
     "wblack":False,
     "dblack":False,
     "cName":"",
-    "cName2":"Parry v10,
+    "cName2":"Parry v10",
     "cName3":"Rakko v10",
     "cName4":"Eliza v10",
     "cName5":"んんKickerんん",
