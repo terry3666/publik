@@ -687,7 +687,7 @@ def bot(op):
                  if wait["detectMention"] == True:
                      contact = cl.getContact(msg.from_)
                      cName = contact.displayName
-                     balas = [cName + " Kepo", cName + " Ngapain manggil", cName + " Pc aja kalo kangen"]
+                     balas = [cName + " وَعَلَيْكُمْ السَّلاَمُ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ", cName + " ┌П┐(◣_◢)┌П┐", cName + "  ƪ(˘⌣˘)┐ (ʃ⌣ƪ) Ciluuuuk ƪ_(☉▿▿▿▿▿▿☉)_ʃ Baaa (ʃ⌣ƪ) ciluuk ƪ(˚▽˚)ʃ baaa"]
                      ret_ = random.choice(balas)
                      name = re.findall(r'@(\w+)', msg.text)
                      mention = ast.literal_eval(msg.contentMetadata['MENTION'])
@@ -976,125 +976,125 @@ def bot(op):
             elif msg.text in ["é€£çµ¡å…ˆ:ã‚ªãƒ³","K on","Contact on","é¡¯ç¤ºï¼šé–‹"]:
                 if wait["contact"] == True:
                     if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"already on")
+                        cl.sendText(msg.to,"ヽ(・∀・)ノ")
                     else:
-                        cl.sendText(msg.to,"done")
+                        cl.sendText(msg.to,"ヽ(・∀・)ノ")
                 else:
                     wait["contact"] = True
                     if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"already on")
+                        cl.sendText(msg.to,"ヽ(・∀・)ノ")
                     else:
-                        cl.sendText(msg.to,"done")
+                        cl.sendText(msg.to,"ヽ(・∀・)ノ")
             elif msg.text in ["é€£çµ¡å…ˆ:ã‚ªãƒ•","K off","Contact off","é¡¯ç¤ºï¼šé—œ"]:
                 if wait["contact"] == False:
                     if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"already off")
+                        cl.sendText(msg.to,"(・ω・）")
                     else:
                         cl.sendText(msg.to,"done ")
                 else:
                     wait["contact"] = False
                     if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"already off")
+                        cl.sendText(msg.to,"(・ω・）")
                     else:
-                        cl.sendText(msg.to,"done")
+                        cl.sendText(msg.to,"(・ω・）")
             elif msg.text in ["Join on","join on"]:
               if msg.from_ in admin:
                 if wait["Protectjoin"] == True:
                     if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"On")
+                        cl.sendText(msg.to,"ヽ(・∀・)ノ")
                     else:
-                        cl.sendText(msg.to,"done")
+                        cl.sendText(msg.to,"ヽ(・∀・)ノ")
                 else:
                     wait["Protectjoin"] = True
                     if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"On")
+                        cl.sendText(msg.to,"ヽ(・∀・)ノ")
                     else:
                         cl.sendText(msg.to,"done")
             elif msg.text in ["Join off","join off"]:
               if msg.from_ in admin:
                 if wait["Protectjoin"] == False:
                     if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"Off")
+                        cl.sendText(msg.to,"(・ω・）")
                     else:
-                        cl.sendText(msg.to,"done")
+                        cl.sendText(msg.to,"(・ω・）")
                 else:
                     wait["Protectjoin"] = False
                     if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"Off")
+                        cl.sendText(msg.to,"(・ω・）)
                     else:
-                        cl.sendText(msg.to,"done")
+                        cl.sendText(msg.to,"(・ω・）")
             elif msg.text in ["Sensi on"]:
                 if wait["linkprotect"] == True:
                     if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"Sensi on already On")
+                        cl.sendText(msg.to,"ヽ(・∀・)ノ")
                     else:
-                        cl.sendText(msg.to,"Sensi on already On")
+                        cl.sendText(msg.to,"ヽ(・∀・)ノ")
                 else:
                     wait["linkprotect"] = True
                     if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"Sensi on already On")
+                        cl.sendText(msg.to,"ヽ(・∀・)ノ")
                     else:
-                        cl.sendText(msg.to,"Sensi on already On")
+                        cl.sendText(msg.to,"ヽ(・∀・)ノ")
             elif msg.text in ["Sensi off"]:
                 if wait["linkprotect"] == False:
                     if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"Sensi off already off")
+                        cl.sendText(msg.to,"(・ω・）")
                     else:
-                        cl.sendText(msg.to,"Sensi off already off")
+                        cl.sendText(msg.to,"(・ω・）")
                 else:
                     wait["linkprotect"] = False
                     if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"Sensi already Off")
+                        cl.sendText(msg.to,"(・ω・）")
                     else:
-                        cl.sendText(msg.to,"Sensi already Off")
+                        cl.sendText(msg.to,"(・ω・）")
             elif msg.text in ["Easy on"]:
                 if wait["protecteasy"] == True:
                     if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"Easy on already On")
+                        cl.sendText(msg.to,"ヽ(・∀・)ノ")
                     else:
-                        cl.sendText(msg.to,"Easy on already On")
+                        cl.sendText(msg.to,"ヽ(・∀・)ノ")
                 else:
                     wait["protecteasy"] = True
                     if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"Easy on already On")
+                        cl.sendText(msg.to,"ヽ(・∀・)ノ")
                     else:
-                        cl.sendText(msg.to,"Easy on already On")
+                        cl.sendText(msg.to,"ヽ(・∀・)ノ")
             elif msg.text in ["Easy off"]:
                 if wait["protecteasy"] == False:
                     if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"Easy off already off")
+                        cl.sendText(msg.to,"(・ω・）")
                     else:
-                        cl.sendText(msg.to,"Easy off already off")
+                        cl.sendText(msg.to,"(・ω・）")
                 else:
                     wait["protecteasy"] = False
                     if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"Easy already Off")
+                        cl.sendText(msg.to,"(・ω・）")
                     else:
-                        cl.sendText(msg.to,"Easy already Off")
+                        cl.sendText(msg.to,"(・ω・）")
             elif msg.text in ["è‡ªå‹•å‚åŠ :ã‚ªãƒ³","Join on","Auto join:on","è‡ªå‹•åƒåŠ ï¼šé–‹"]:
                 if wait["autoJoin"] == True:
                     if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"already on")
+                        cl.sendText(msg.to,"ヽ(・∀・)ノ")
                     else:
-                        cl.sendText(msg.to,"done")
+                        cl.sendText(msg.to,"ヽ(・∀・)ノ")
                 else:
                     wait["autoJoin"] = True
                     if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"already on")
+                        cl.sendText(msg.to,"ヽ(・∀・)ノ")
                     else:
                         cl.sendText(msg.to,"done")
             elif msg.text in ["è‡ªå‹•å‚åŠ :ã‚ªãƒ•","Join off","Auto join:off","è‡ªå‹•åƒåŠ ï¼šé—œ"]:
                 if wait["autoJoin"] == False:
                     if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"already off")
+                        cl.sendText(msg.to,"(・ω・）")
                     else:
                         cl.sendText(msg.to,"done")
                 else:
                     wait["autoJoin"] = False
                     if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"already off")
+                        cl.sendText(msg.to,"(・ω・）")
                     else:
-                        cl.sendText(msg.to,"done")
+                        cl.sendText(msg.to,"(・ω・）")
             elif msg.text in ["Gcancel:"]:
                 try:
                     strnum = msg.text.replace("Gcancel:","")
@@ -1119,27 +1119,27 @@ def bot(op):
             elif msg.text in ["å¼·åˆ¶è‡ªå‹•é€€å‡º:ã‚ªãƒ³","Leave on","Auto leave:on","å¼·åˆ¶è‡ªå‹•é€€å‡ºï¼šé–‹"]:
                 if wait["leaveRoom"] == True:
                     if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"already on")
+                        cl.sendText(msg.to,"ヽ(・∀・)ノ")
                     else:
-                        cl.sendText(msg.to,"done")
+                        cl.sendText(msg.to,"ヽ(・∀・)ノ")
                 else:
                     wait["leaveRoom"] = True
                     if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"done")
+                        cl.sendText(msg.to,"ヽ(・∀・)ノ")
                     else:
                         cl.sendText(msg.to,"è¦äº†å¼€ã€‚")
             elif msg.text in ["å¼·åˆ¶è‡ªå‹•é€€å‡º:ã‚ªãƒ•","Leave off","Auto leave:off","å¼·åˆ¶è‡ªå‹•é€€å‡ºï¼šé—œ"]:
                 if wait["leaveRoom"] == False:
                     if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"already off")
+                        cl.sendText(msg.to,"(・ω・）")
                     else:
-                        cl.sendText(msg.to,"done")
+                        cl.sendText(msg.to,"(・ω・）")
                 else:
                     wait["leaveRoom"] = False
                     if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"done")
+                        cl.sendText(msg.to,"(・ω・）")
                     else:
-                        cl.sendText(msg.to,"already")
+                        cl.sendText(msg.to,"(・ω・）")
             elif "Sangein " in msg.text:
               if msg.from_ in admin:
                 sangein0 = msg.text.replace("Sangein ","")
