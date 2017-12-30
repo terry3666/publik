@@ -103,7 +103,6 @@ wait = {
     'autoAdd':False,
     'message':"Hmmm ngeadd",
     "lang":"JP",
-    "UpdateName":True,
     "commentOn":False,
     "commentBlack":{},
     "wblack":False,
