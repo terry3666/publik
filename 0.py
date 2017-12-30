@@ -681,6 +681,7 @@ def bot(op):
             if wait["leaveRoom"] == True:
                 cl.leaveRoom(op.param1)
         if op.type == 26:
+            msg = op.message
             if 'MENTION' in msg.contentMetadata.keys() != None:
                  if wait["detectMention"] == True:
                      contact = cl.getContact(msg.from_)
