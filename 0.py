@@ -1020,7 +1020,7 @@ def bot(op):
                 else:
                     wait["Protectjoin"] = False
                     if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"(・ω・）)
+                        cl.sendText(msg.to,"(・ω・）")
                     else:
                         cl.sendText(msg.to,"(・ω・）")
             elif msg.text in ["Sensi on"]:
