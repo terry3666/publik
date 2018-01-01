@@ -1007,7 +1007,7 @@ def bot(op):
 #-----------------------------------------------
 #-----------------------------------------------
             elif "copy @" in msg.text:
-	      if msg.from_ in admin
+	      if msg.from_ in admin:
                    print "[COPY] Ok"
                    _name = msg.text.replace("copy @","")
                    _nametarget = _name.rstrip('  ')
