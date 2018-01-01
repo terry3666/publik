@@ -24,7 +24,40 @@ reload(sys)
 sys.setdefaultencoding('utf-8')
 
 helpMessage ="""
+Publik original
 
+Help
+Gn [namagroup]
+Invite [mid
+Publiktag on/off
+Me
+Mid [@]
+Cancel
+Gurl
+Curl
+Id
+Mid
+E on/off
+K on/off
+Set
+Sider
+Runtime
+Restart
+Listteman
+DaftarGroup
+/leave
+S [on] [jmlh] [text]
+Spamtag [@]
+Summon
+copy [@]
+Backup
+/profileig [id]
+/instagram [id]
+Gbc [text]
+Cbc [text]
+Gc
+Respon
+Sp
 """
 KAC=[cl]
 mid = cl.getProfile().mid
@@ -572,11 +605,11 @@ def bot(op):
                 midd = msg.text.replace("Invite ","")
                 cl.findAndAddContactsByMid(midd)
                 cl.inviteIntoGroup(msg.to,[midd])
-            elif msg.text in ["Respontag on","Autorespon:on","Respon on","Respon:on"]:
+            elif msg.text in ["Publiktag on","Autorespon:on","Respon on","Respon:on"]:
 	      if msg.from_ in admin:
                 wait["detectMention"] = True
                 cl.sendText(msg.to,"ヽ(・∀・)ノ")
-            elif msg.text in ["Respontag off","Autorespon:off","Respon off","Respon:off"]:
+            elif msg.text in ["Publiktag off","Autorespon:off","Respon off","Respon:off"]:
 	      if msg.from_ in admin:
 		wait["detectMention"] = False
                 cl.sendText(msg.to,"(・ω・）")
@@ -584,8 +617,8 @@ def bot(op):
                 msg.contentType = 13
                 msg.contentMetadata = {'mid': mid}
                 cl.sendMessage(msg)
-            elif "Getmid @" in msg.text:
-                _name = msg.text.replace("Getmid @","")
+            elif "Mid @" in msg.text:
+                _name = msg.text.replace("Mid @","")
                 _nametarget = _name.rstrip(' ')
                 gs = cl.getGroup(msg.to)
                 for g in gs.members:
@@ -624,6 +657,20 @@ def bot(op):
                         cl.sendText(msg.to,"Can't be used outside the group")
                     else:
                         cl.sendText(msg.to,"Not for use less than group")
+            elif msg.text in ["Curl","Link off"]:
+                if msg.toType == 2:
+                    X = cl.getGroup(msg.to)
+                    X.preventJoinByTicket = True
+                    cl.updateGroup(X)
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"Done")
+                    else:
+                        cl.sendText(msg.to,"already close")
+                else:
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"Can not be used outside the group")
+                    else:
+                        cl.sendText(msg.to,"Not for use less than group")
             elif msg.text == "Ginfo":
                 if msg.toType == 2:
                     ginfo = cl.getGroup(msg.to)
@@ -657,7 +704,7 @@ def bot(op):
                 msg.contentType = 13
                 msg.contentMetadata = {"mid":mmid}
                 cl.sendMessage(msg)
-            elif msg.text in ["Easy on"]:
+            elif msg.text in ["E on"]:
 	      if msg.from_ in admin:
                 if wait["protecteasy"] == True:
                     if wait["lang"] == "JP":
@@ -670,7 +717,7 @@ def bot(op):
                         cl.sendText(msg.to,"ヽ(・∀・)ノ")
                     else:
                         cl.sendText(msg.to,"ヽ(・∀・)ノ")
-            elif msg.text in ["Easy off"]:
+            elif msg.text in ["E off"]:
 	      if msg.from_ in admin:
                 if wait["protecteasy"] == False:
                     if wait["lang"] == "JP":
@@ -683,7 +730,7 @@ def bot(op):
                         cl.sendText(msg.to,"(・ω・）")
                     else:
                         cl.sendText(msg.to,"(・ω・）")
-            elif msg.text in ["é€£çµ¡å…ˆ:ã‚ªãƒ³","K on","Contact on","é¡¯ç¤ºï¼šé–‹"]:
+            elif msg.text in ["K on"]:
                 if wait["contact"] == True:
                     if wait["lang"] == "JP":
                         cl.sendText(msg.to,"ヽ(・∀・)ノ")
@@ -695,7 +742,7 @@ def bot(op):
                         cl.sendText(msg.to,"ヽ(・∀・)ノ")
                     else:
                         cl.sendText(msg.to,"ヽ(・∀・)ノ")
-            elif msg.text in ["é€£çµ¡å…ˆ:ã‚ªãƒ•","K off","Contact off","é¡¯ç¤ºï¼šé—œ"]:
+            elif msg.text in ["K off"]:
                 if wait["contact"] == False:
                     if wait["lang"] == "JP":
                         cl.sendText(msg.to,"(・ω・）")
@@ -803,7 +850,7 @@ def bot(op):
 
 #-----------------------------------------------
 #-----------------------------------------------
-            elif msg.text in ["Friendlist"]:    
+            elif msg.text in ["Listteman"]:    
                 contactlist = cl.getAllContactIds()
                 kontak = cl.getContacts(contactlist)
                 num=1
@@ -825,17 +872,18 @@ def bot(op):
                 msgs+="\n→→→→→мємвєя←←←←←\n\nTotal Members : %i" % len(group)
                 cl.sendText(msg.to, msgs)
 #-----------------------------------------------
-            elif msg.text in ["Out"]:
+            elif msg.text in ["/leave"]:
 	      if msg.from_ in admin:
                 if msg.toType == 2:
                     ginfo = cl.getGroup(msg.to)
                     try:
-			cl.sendText(msg.to)
+			cl.sendText(msg.to,"\(´ー｀)┌")
+                        cl.leaveGroup(msg.to)
                     except:
                         pass
 #-----------------------------------------------
 #-----------------------------------------------
-            elif "Up " in msg.text:
+            elif "S " in msg.text:
 	      if msg.from_ in admin:
                    txt = msg.text.split(" ")
                    jmlh = int(txt[2])
@@ -995,7 +1043,7 @@ def bot(op):
 #-----------------------------------------------
 #-----------------------------------------------
             elif "copy @" in msg.text:
-	      if msg.from_ in admin:
+	      if msg.from_ in admin
                    print "[COPY] Ok"
                    _name = msg.text.replace("copy @","")
                    _nametarget = _name.rstrip('  ')
@@ -1023,9 +1071,9 @@ def bot(op):
                     except Exception as e:
                         cl.sendText(msg.to, str(e))
 #-----------------------------------------------
-            elif "Profileig " in msg.text:
+            elif "/profileig " in msg.text:
                     try:
-                        instagram = msg.text.replace("Profileig ","")
+                        instagram = msg.text.replace("/profileig ","")
                         response = requests.get("https://www.instagram.com/"+instagram+"?__a=1")
                         data = response.json()
                         namaIG = str(data['user']['full_name'])
@@ -1043,9 +1091,9 @@ def bot(op):
                     except Exception as e:
                         cl.sendText(msg.to, str(e))
 #----------------------------------------------
-            elif "Instagram " in msg.text:
+            elif "/instagram " in msg.text:
                     try:
-                        instagram = msg.text.replace("Instagram ","")
+                        instagram = msg.text.replace("/instagram ","")
                         response = requests.get("https://www.instagram.com/"+instagram+"?__a=1")
                         data = response.json()
                         namaIG = str(data['user']['full_name'])
@@ -1064,7 +1112,7 @@ def bot(op):
                     except Exception as e:
                         cl.sendText(msg.to, str(e))
 #----------------Commandtambahan----------------------#
-            elif msg.text in ["List group","Glist"]:
+            elif msg.text in ["DaftarGroup"]:
               if msg.from_ in admin:
                gid = cl.getGroupIdsJoined()
                h = ""
@@ -1084,21 +1132,21 @@ def bot(op):
                       cl.sendText(msg.to, "🅂🅄🄿🄿🄾🅁🅃 🄱🅈 🄹🄾🄺🄴🅁 🄱🄾🅃 🄰🄽🄳 🄳🄹")
                       cl.sendMessage(msg)
 
-            elif "Group bc " in msg.text:
+            elif "Gbc " in msg.text:
 	      if msg.from_ in admin:
-               bctxt = msg.text.replace("Group bc ", "")
+               bctxt = msg.text.replace("Gbc ", "")
                n = cl.getGroupIdsJoined()
                for manusia in n:
                   cl.sendText(manusia, (bctxt))
                   
-            elif "Contact bc " in msg.text:
+            elif "Cbc " in msg.text:
 	      if msg.from_ in admin:
-               bctxt = msg.text.replace("Contact bc ", "")
+               bctxt = msg.text.replace("Cbc ", "")
                t = cl.getAllContactIds()
                for manusia in t:
                   cl.sendText(manusia, (bctxt))
                   
-            elif msg.text in ["Gcreator"]:
+            elif msg.text in ["Gc"]:
               if msg.toType == 2:
                     msg.contentType = 13
                     ginfo = cl.getGroup(msg.to)
