@@ -664,6 +664,8 @@ def bot(op):
 		rplace=msg.text.lower().replace("Tjoin ")
 		if rplace == "on":
 			wait["atjointicket"]=True
+		elif rplace == "off":
+			wait["atjointicket"]=False
 		cl.sendText(msg.to,"Auto Join Group %s" % str(wait["atjointicket"]))
             elif '/ti/g/' in msg.text.lower():
 		link_re = re.compile('(?:line\:\/|line\.me\/R)\/ti\/g\/([a-zA-Z0-9_-]+)?')
