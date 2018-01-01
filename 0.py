@@ -77,7 +77,8 @@ helpMessage =""" 「ѕєℓf ¢σммαи∂」
 「gєтмι∂ @」
 「яυитιмє」
 「ѕιяι/вує」
-「кιℓℓ」 
+「кιℓℓ」
+「gєтмι∂ @」
 「¢ℓєαиѕє」 
 「ик @」
 「вℓα¢кℓιѕт @」
@@ -88,7 +89,7 @@ helpMessage =""" 「ѕєℓf ¢σммαи∂」
 「¢ℓєαя вαи」
 「ѕυммσи」
 「fяιєи∂ℓιѕт」
-「мємℓιѕт」
+「ℓιѕтgяσυρ」
 「нαя∂ σи/σff」
 """
 KAC=[cl,ki,kk,kc,kb]
@@ -377,7 +378,7 @@ def summon(to, nama):
 def waktu(secs):
     mins, secs = divmod(secs,60)
     hours, mins = divmod(mins,60)
-    return '%02d Hours %02d Minute %02d Seconds」' % (hours, mins, secs)      
+    return '%02d нσυяѕ %02d мιиυтє %02d ѕє¢σи∂」' % (hours, mins, secs)      
 
 def cms(string, commands): #/XXX, >XXX, ;XXX, ^XXX, %XXX, $XXX...
     tex = ["+","@","/",">",";","^","%","$","＾","サテラ:","サテラ:","サテラ：","サテラ："]
@@ -1468,22 +1469,22 @@ def bot(op):
                 contactlist = cl.getAllContactIds()
                 kontak = cl.getContacts(contactlist)
                 num=1
-                msgs="═════════List Friend═════════"
+                msgs="→→→→→List Friend←←←←←"
                 for ids in kontak:
                     msgs+="\n[%i] %s" % (num, ids.displayName)
                     num=(num+1)
                 msgs+="\n═════════List Friend═════════\n\nTotal Friend : %i" % len(kontak)
                 cl.sendText(msg.to, msgs)
                 
-            elif msg.text in ["Memlist"]:   
+            elif msg.text in ["Listgroup"]:   
                 kontak = cl.getGroup(msg.to)
                 group = kontak.members
                 num=1
-                msgs="═════════List Member═════════-"
+                msgs="→→→→→мємвєя←←←←←"
                 for ids in group:
                     msgs+="\n[%i] %s" % (num, ids.displayName)
                     num=(num+1)
-                msgs+="\n═════════List Member═════════\n\nTotal Members : %i" % len(group)
+                msgs+="\n→→→→→мємвєя←←←←←\n\nTotal Members : %i" % len(group)
                 cl.sendText(msg.to, msgs)
 #-----------------------------------------------
             elif msg.text in ["Bye"]:
