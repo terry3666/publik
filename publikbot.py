@@ -424,23 +424,7 @@ def bot(op):
                     pass
                 else:
                     cl.sendText(op.param1,str(wait["message"]))
-        #------Protect Group Kick start------#
-        if op.type == 11:
-            if op.param2 not in Bots:
-                if op.param2 in Bots:
-                    pass
-                elif wait["linkprotect"] == True:
-                    wait ["blacklist"][op.param2] = True
-                    G = cl.getGroup(op.param1)
-                    G.preventJoinByTicket = True
-                    Ticket = cl.reissueGroupTicket(op.param1)
-                    ke.acceptGroupInvitationByTicket(op.param1,Ticket)
-                    ke.kickoutFromGroup(op.param1,[op.param2])
-                    cl.updateGroup(G)
-		    ke.leaveGroup(op.param1)
-			
 
-        #------Protect Group Kick finish-----#
         #------CCTV-------------===----------#
         if op.type == 55:
           try:
@@ -633,7 +617,6 @@ def bot(op):
                     else:
                         cl.sendText(msg.to,"Not for use less than group")
             elif msg.text in ["Gurl"]:
-	      if msg.from_ in admin:
                 if msg.toType == 2:
                     x = cl.getGroup(msg.to)
                     if x.preventJoinByTicket == True:
