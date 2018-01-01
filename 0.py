@@ -16,27 +16,27 @@ from threading import Thread
 
 
 cl = LineAlpha.LINE()
-cl.login(token="")
+cl.login(token="EojQ8VQUWj0LzKACAUK2.WCCRkMNgQXINSOQNF/5yiG.HcBCwDzDvEbw8LVVUigLnoFsfe/kR/a/d/3PwzupMdI=")
 cl.loginResult()
 
 kk = LineAlpha.LINE()
-kk.login(token="")
+kk.login(token="EoiIEWfkc7qQTS0dJk31.6FEeUgZiJRekuif7AJkoyq.gt2+awsufl1EsOAmBK3zjlINM/vV+inAQxh0NblP+T4=")
 kk.loginResult()
 
 ki = LineAlpha.LINE()
-ki.login(token="")
+ki.login(token="EohAynjFlp8OPN3IJgbc.WU1DIxPO+PMAGO5zAJJf+a.bvYwjSmdY9HcXix7kszYPlVtdzg/qb8n8VNJRXRXjDw=")
 ki.loginResult()
 
 kc = LineAlpha.LINE()
-kc.login(token="")
+kc.login(token="Eo2Ft59DtcPYkYTLsQc0.SIIDQHB+PWCP2bXYI9JK8a.RLcbBjPkfNmu00t934EYv8jSxpUgtyq09nLTV2sE18s=")
 kc.loginResult()
 
 ke = LineAlpha.LINE()
-ke.login(token="")
+ke.login(token="Eo6jMSNMvMQi8C8NIqU2.zz02fzUHgHMt43YFBMIUuG.pH6og4n4U6ICCLMJZTN0b7VX3HcY480LacDrKwWeZuU=")
 ke.loginResult()
 
 kb = LineAlpha.LINE()
-kb.login(token="")
+kb.login(token="EodtgRca4b1EhJQ62USc.iPVblK8oEfqifUIij+vu7a.hIegb+c/fZqn7dHkXMkcQCM0AJY4d1TenrC7RA7GHqQ=")
 kb.loginResult()
 
 print "login success"
