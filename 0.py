@@ -2,7 +2,7 @@
 import LineAlpha
 from LineAlpha.Gen.ttypes import *
 from datetime import datetime
-import time, random, sys, ast, re, os, io, json, subprocess, threading, string, codecs, requests, ctypes, urllib, urllib2, urllib3, wikipedia
+import time, random, sys, ast, re, os, io, json, subprocess, threading, string, codecs, requests, ctypes, urllib, urllib2, urllib3, wikipedia,glob
 from bs4 import BeautifulSoup
 from urllib import urlopen
 import requests
@@ -301,6 +301,29 @@ def sendImage(self, to_, path):
         #r.content
         return True
 
+def sendImage2(self, to_, path):
+      M = Message(to=to_,contentType = 1)
+      M.contentMetadata = None
+      M.contentPreview = None
+      M_id = self._client.sendMessage(M).id
+      files = {
+         'file': open(path, 'rb'),
+      }
+      params = {
+         'name': 'media',
+         'oid': M_id,
+         'size': len(open(path, 'rb').read()),
+         'type': 'image',
+         'ver': '1.0',
+      }
+      data = {
+         'params': json.dumps(params)
+      }
+      r = self._client.post_content('https://os.line.naver.jp/talk/m/upload.nhn', data=data, files=files)
+      if r.status_code != 201:
+         raise Exception('Upload image failure.')
+      return True
+
 def sendImageWithURL(self, to_, url):
       path = '%s/pythonLine-%i.data' % (tempfile.gettempdir(), randint(0, 9))
       r = requests.get(url, stream=True)
@@ -436,6 +459,9 @@ def sendMessage(to, text, contentMetadata={}, contentType=0):
     if to not in messageReq:
         messageReq[to] = -1
     messageReq[to] += 1
+
+def removeAllMessages(self, lastMessageId):
+     return self._client.removeAllMessages(0, lastMessageId)
 
 def bot(op):
     try:
