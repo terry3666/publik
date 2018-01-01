@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 from Api import Poll, Talk
 import requests,shutil,random,string,json,os,tempfile
+from random import randint
+from time import time
 from Gen.ttypes import *
 
 def def_callback(str):
