@@ -37,7 +37,6 @@ Gurl
 Curl
 Id
 Mid
-E on/off
 K on/off
 Set
 Sider
@@ -84,7 +83,6 @@ wait = {
     "protectionOn":True,
     "atjointicket":True,
     "linkprotect":False,
-    "protecteasy":False,
     "detectMention":True,
     }
 
@@ -442,15 +440,7 @@ def bot(op):
                     cl.updateGroup(G)
 		    ke.leaveGroup(op.param1)
 			
-        if op.type == 11:
-            if op.param2 not in Bots:
-               if op.param2 not in admin and Bots:
-                    pass
-                elif wait["protecteasy"] == True:
-                    wait ["blacklist"][op.param2] = True
-                    G = cl.getGroup(op.param1)
-                    G.preventJoinByTicket = True
-                    cl.updateGroup(G)
+
         #------Protect Group Kick finish-----#
         #------CCTV-------------===----------#
         if op.type == 55:
@@ -704,32 +694,6 @@ def bot(op):
                 msg.contentType = 13
                 msg.contentMetadata = {"mid":mmid}
                 cl.sendMessage(msg)
-            elif msg.text in ["E on"]:
-	      if msg.from_ in admin:
-                if wait["protecteasy"] == True:
-                    if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"ヽ(・∀・)ノ")
-                    else:
-                        cl.sendText(msg.to,"ヽ(・∀・)ノ")
-                else:
-                    wait["protecteasy"] = True
-                    if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"ヽ(・∀・)ノ")
-                    else:
-                        cl.sendText(msg.to,"ヽ(・∀・)ノ")
-            elif msg.text in ["E off"]:
-	      if msg.from_ in admin:
-                if wait["protecteasy"] == False:
-                    if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"(・ω・）")
-                    else:
-                        cl.sendText(msg.to,"(・ω・）")
-                else:
-                    wait["protecteasy"] = False
-                    if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"(・ω・）")
-                    else:
-                        cl.sendText(msg.to,"(・ω・）")
             elif msg.text in ["K on"]:
                 if wait["contact"] == True:
                     if wait["lang"] == "JP":
