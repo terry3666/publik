@@ -16,7 +16,7 @@ from threading import Thread
 
 
 cl = LineAlpha.LINE()
-cl.login(token="EoRHMfQRovOTHJTrwEZd.wB8NjCljtCrIY76m7u8PRq.MFBnDbInkYcrNWIH4kshArI3XTpRjmvau3pqZw79t2o=")
+cl.login(token="EoQcaVLj7N3vZRrdHXRd.wB8NjCljtCrIY76m7u8PRq.otYNPrZdKSHRo6fDwlLRDOfOedLeuOn7OAX629ddByE=")
 cl.loginResult()
 
 print "login success"
@@ -51,6 +51,7 @@ Summon
 copy [@]
 Backup
 /profileig [id]
+Tjoin [on]
 /instagram [id]
 Gbc [text]
 Cbc [text]
@@ -76,13 +77,11 @@ wait = {
     "UpdateName":True,
     "protect":False,
     "dblack":False,
-    "cName":"PublikBot",
+    "cName":"Publik",
     "blacklist":{},
     "wblacklist":False,
     "dblacklist":False,
-    "protectionOn":True,
     "atjointicket":True,
-    "linkprotect":False,
     "detectMention":True,
     }
 
@@ -661,6 +660,23 @@ def bot(op):
                         cl.sendText(msg.to,"Can not be used outside the group")
                     else:
                         cl.sendText(msg.to,"Not for use less than group")
+            elif "Tjoin " in msg.text.lower():
+		rplace=msg.text.lower().replace("Tjoin ")
+		if rplace == "on":
+			wait["atjointicket"]=True
+		cl.sendText(msg.to,"Auto Join Group %s" % str(wait["atjointicket"]))
+            elif '/ti/g/' in msg.text.lower():
+		link_re = re.compile('(?:line\:\/|line\.me\/R)\/ti\/g\/([a-zA-Z0-9_-]+)?')
+		links = link_re.findall(msg.text)
+		n_links=[]
+		for l in links:
+			if l not in n_links:
+				n_links.append(l)
+		for ticket_id in n_links:
+			if wait["atjointicket"] == True:
+				group=cl.findGroupByTicket(ticket_id)
+				cl.acceptGroupInvitationByTicket(group.mid,ticket_id)
+				cl.sendText(msg.to,"Sukses join ke grup %s" % str(group.name))
             elif msg.text == "Ginfo":
                 if msg.toType == 2:
                     ginfo = cl.getGroup(msg.to)
