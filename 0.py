@@ -16,27 +16,27 @@ from threading import Thread
 
 
 cl = LineAlpha.LINE()
-cl.login(token="Eow3Wa9qOMXn3AFTiSp2.WCCRkMNgQXINSOQNF/5yiG.2wUO1wL4LhLzryIRz7WFZKCksw4JHHUbyuP+HcOCNZo=")
+cl.login(token="")
 cl.loginResult()
 
 kk = LineAlpha.LINE()
-kk.login(token="Eo1XHMcuBPw5uRrhsv91.6FEeUgZiJRekuif7AJkoyq.RRQmBv0RAvBHXVgGJWYxk+Kv1fKks2C6RE1m5zUfSX0=")
+kk.login(token="")
 kk.loginResult()
 
 ki = LineAlpha.LINE()
-ki.login(token="EoHFnw8rqquoECKzIURc.WU1DIxPO+PMAGO5zAJJf+a./hPuFyYHsBHUfIaQtKdq4SI/hHmkoH5M9ZvNy0aPkv8=")
+ki.login(token="")
 ki.loginResult()
 
 kc = LineAlpha.LINE()
-kc.login(token="EolkIg91WAsNuBfpKPv0.SIIDQHB+PWCP2bXYI9JK8a.uC4ISbkg7FinCwUVwqWc2Zg5UNK8bJ9JJ3OVrnHNzyA=")
+kc.login(token="")
 kc.loginResult()
 
 ke = LineAlpha.LINE()
-ke.login(token="EoqS9rT7e2R9QjiZvwV2.zz02fzUHgHMt43YFBMIUuG.1darXNCP7BEpK9t6LpSTXoO2C/r0PtTkIJuqQqCxAWk=")
+ke.login(token="")
 ke.loginResult()
 
 kb = LineAlpha.LINE()
-kb.login(token="Eozin7m1edE3KOAAfCmc.iPVblK8oEfqifUIij+vu7a.kAQXiUHv6LT1u7pbLN+kMbrY4rK28n5P6EcQxeCVQ4g=")
+kb.login(token="")
 kb.loginResult()
 
 print "login success"
@@ -106,6 +106,8 @@ wait = {
     "commentOn":False,
     "commentBlack":{},
     "wblack":False,
+    "UpdateName":True,
+    "protect":False,
     "dblack":False,
     "cName":"ℱe̮̟͈̣̖̰̩̹͈̾ͨ̑͑r̼̯̤̗̲̞̥̈ͭ̃ͨ̆i̞̟̫̺ͭ̒ͭͣa̘̫͈̭͌͛͌̇̇̍n͉̠̙͉̗̺̋̔ͧ̊t̘̟̼̉̈́͐͋͌̊o̜̓̇ͫ̉͊ͨy͉̝͖̻̯ͮ̒̂ͮ͋ͫͨp̱̱̬̻̞̩͎̌ͦ̏ͪ͋̚",
     "cName2":"ParryV10",
@@ -477,7 +479,7 @@ def bot(op):
                         Ti = random.choice(KAC).reissueGroupTicket(op.param1)
 
                 if op.param3 in Cmid:
-                    if op.param2 in mid:
+                    if op.param2 in Emid:
                         X = random.choice(KAC).getGroup(op.param1)
                         X.preventJoinByTicket = False
                         random.choice(KAC).updateGroup(X)
@@ -536,7 +538,15 @@ def bot(op):
                   ke.kickoutFromGroup(op.param1,[op.param2])
 		  cl.updateGroup(G)
                   ke.leaveGroup(op.param1)
-
+#---------------------------------------------#
+        if op.type == 19:
+            if op.param2 not in Bots:
+                if op.param2 in Bots:
+                    pass
+                elif wait["protect"] == True:
+                    wait ["blacklist"][op.param2] = True
+                    ki.kickoutFromGroup(op.param1,[op.param2])
+                    #cl.inviteIntoGroup(op.param1,[op.param2])
         #---------------------------------#
 
         if op.type == 19:
@@ -1112,6 +1122,30 @@ def bot(op):
                         cl.sendText(msg.to,"(・ω・）")
                     else:
                         cl.sendText(msg.to,"(・ω・）")
+            elif msg.text in ["Hard on"]:
+                if wait["protect"] == True:
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"ヽ(・∀・)ノ")
+                    else:
+                        cl.sendText(msg.to,"ヽ(・∀・)ノ")
+                else:
+                    wait["protect"] = True
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"ヽ(・∀・)ノ")
+                    else:
+                        cl.sendText(msg.to,"ヽ(・∀・)ノn")
+            elif msg.text in ["Hard off"]:
+                if wait["protect"] == False:
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"(・ω・）")
+                    else:
+                        cl.sendText(msg.to,"(・ω・）")
+                else:
+                    wait["protect"] = False
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"(・ω・）")
+                    else:
+                        cl.sendText(msg.to,"(・ω・）")
             elif msg.text in ["Easy on"]:
                 if wait["protecteasy"] == True:
                     if wait["lang"] == "JP":
@@ -1245,6 +1279,8 @@ def bot(op):
                 md = ""
                 if wait["contact"] == True: md+=" 「❧¢σитα¢т : ヽ(・∀・)ノ」\n"
                 else: md+=" 「❧¢σитα¢т : (・ω・）」\n"
+                if wait["protect"] == True: md+=" 「❧нαя∂ : ヽ(・∀・)ノ」\n"
+                else: md+=" 「❧нαя∂ : (・ω・）」\n"
                 if wait["linkprotect"] == True: md+=" 「❧ѕєиѕι : ヽ(・∀・)ノ」\n"
                 else: md+=" 「❧ѕєиѕι : (・ω・）」\n"
                 if wait["Protectjoin"] == True: md+=" 「❧кι¢кʝσιи : ヽ(・∀・)ノ」\n"
@@ -1253,7 +1289,7 @@ def bot(op):
                 else: md+=" 「❧тαg : (・ω・）」\n"
                 if wait["protecteasy"] == True: md+=" 「❧єαѕу : ヽ(・∀・)ノ」\n"
                 else: md+=" 「❧єαѕу : (・ω・）」\n"
-                if wait["autoJoin"] == True: md+=" 「❧αυтσ ʝσιи : σи」\n"
+                if wait["autoJoin"] == True: md+=" 「❧αυтσ ʝσιи : ヽ(・∀・)ノ」\n"
                 else: md +=" 「❧αυтσ ʝσιи : (・ω・）」\n"
                 if wait["autoCancel"]["on"] == True:md+=" 「❧gяσυρ ¢αи¢єℓ : ヽ(・∀・)ノ" + str(wait["autoCancel"]["members"]) + "」\n"
                 else: md+= " 「❧gяσυρ ¢αи¢єℓ : (・ω・）」\n"
