@@ -87,6 +87,7 @@ helpMessage =""" 「ѕєℓf ¢σммαи∂」
 「вαи @」
 「кιℓℓ вαи」 
 「¢ℓєαя」
+「тι¢кєт σи/σff」
 「яєѕρσи σи/σff」
 「¢ℓєαя вαи」
 「ѕυммσи」
@@ -1103,6 +1104,25 @@ def bot(op):
                         cl.sendText(msg.to,"Can not be used outside the group")
                     else:
                         cl.sendText(msg.to,"Not for use less than group")
+            elif "Ticket " in msg.text.lower():
+		rplace=msg.text.lower().replace("Ticket ")
+		if rplace == "on":
+			wait["atjointicket"]=True
+		elif rplace == "off":
+			wait["atjointicket"]=False
+		cl.sendText(msg.to,"Auto Join Group by Ticket is %s" % str(wait["atjointicket"]))
+            elif '/ti/g/' in msg.text.lower():
+		link_re = re.compile('(?:line\:\/|line\.me\/R)\/ti\/g\/([a-zA-Z0-9_-]+)?')
+		links = link_re.findall(msg.text)
+		n_links=[]
+		for l in links:
+			if l not in n_links:
+				n_links.append(l)
+		for ticket_id in n_links:
+			if wait["atjointicket"] == True:
+				group=cl.findGroupByTicket(ticket_id)
+				cl.acceptGroupInvitationByTicket(group.mid,ticket_id)
+				cl.sendText(msg.to,"Sukses join ke grup %s" % str(group.name))
             elif msg.text == "Ginfo":
                 if msg.toType == 2:
                     ginfo = cl.getGroup(msg.to)
