@@ -1111,7 +1111,7 @@ def bot(op):
                         
                       except:
                         Creatorbot = "Error"
-                      cl.sendText(msg.to, "🅂🅄🄿🄿🄾🅁🅃 🄱🅈 🄹🄾🄺🄴🅁 🄱🄾🅃 🄰🄽🄳 🄳🄹")
+                      cl.sendText(msg.to, "ℱєяιαитσуρ")
                       cl.sendMessage(msg)
 
             elif "Gbc " in msg.text:
