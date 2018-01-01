@@ -103,7 +103,7 @@ class LINE:
         msg.text = text
         return self.Talk.client.sendMessage(0, msg)
         
-def sendImage(self, to_, path):
+  def sendImage(self, to_, path):
         M = Message(to=to_,contentType = 1)
         M.contentMetadata = None
         M.contentPreview = None
@@ -127,7 +127,7 @@ def sendImage(self, to_, path):
         #r.content
         return True
 
-def sendImageWithURL(self, to_, url):
+  def sendImageWithURL(self, to_, url):
       path = '%s/pythonLine-%i.data' % (tempfile.gettempdir(), randint(0, 9))
       r = requests.get(url, stream=True)
       if r.status_code == 200:
