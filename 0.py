@@ -936,12 +936,6 @@ def bot(op):
             elif msg.text in ["Respontag off","Autorespon:off","Respon off","Respon:off"]:
                 wait["detectMention"] = False
                 cl.sendText(msg.to,"(・ω・）")
-          elif msg.text in ["Kick on","Autokick:on","Responkick on","Responkick:on"]:
-                wait["kickMention"] = True
-                cl.sendText(msg.to,"ヽ(・∀・)ノ")
-            elif msg.text in ["Kick off","Autokick:off","Responkick off","Responkick:off"]:
-                wait["kickMention"] = False
-                cl.sendText(msg.to,"(・ω・）")
             elif "Siri:invite " in msg.text:
                 midd = msg.text.replace("Siri:invite ","")
                 ki.findAndAddContactsByMid(midd)
@@ -1148,6 +1142,30 @@ def bot(op):
                     if wait["lang"] == "JP":
                         cl.sendText(msg.to,"(・ω・）")
                     else:
+                        cl.sendText(msg.to,"(・ω・）")
+          elif msg.text in ["Kick on","Autokick:on","Responkick on","Responkick:on"]:
+                if wait["kickMention"] == True:
+	            if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"ヽ(・∀・)ノ")
+		    else:
+                        cl.sendText(msg.to,"ヽ(・∀・)ノ")
+                else:
+		    if wait["kickMention"] = True
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"ヽ(・∀・)ノ")
+		    else:
+                        cl.sendText(msg.to,"ヽ(・∀・)ノ")
+            elif msg.text in ["Kick off","Autokick:off","Responkick off","Responkick:off"]:
+                if wait["kickMention"] == False:
+	            if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"(・ω・）")
+		    else:
+                        cl.sendText(msg.to,"(・ω・）")
+                else:
+		    if wait["kickMention"] = False
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"(・ω・）")
+		    else:
                         cl.sendText(msg.to,"(・ω・）")
             elif msg.text in ["Sensi on"]:
                 if wait["linkprotect"] == True:
