@@ -112,7 +112,6 @@ wait = {
     "commentBlack":{},
     "wblack":False,
     "UpdateName":True,
-    "kickMention":False,
     "protect":False,
     "dblack":False,
     "cName":"ℱєяιαитσуρ",
@@ -765,21 +764,6 @@ def bot(op):
                                   cl.sendText(msg.to,ret_)
                                   break
 
-            if 'MENTION' in msg.contentMetadata.keys() != None:
-                 if wait["kickMention"] == True:
-                     contact = cl.getContact(msg.from_)
-                     cName = contact.displayName
-                     balas = ["",cName + " Ngapain Ngetag?, ", cName + " Kenapa Tag saya?,  " + cName + "?", "Ada Perlu apa, " + cName + "?","Tag doang tidak perlu., ", "Tersummon -_-, "]
-                     ret_ = "{αυтσ яεꌗρσи∂}\n" + random.choice(balas)
-                     name = re.findall(r'@(\w+)', msg.text)
-                     mention = ast.literal_eval(msg.contentMetadata['MENTION'])
-                     mentionees = mention['MENTIONEES']
-                     for mention in mentionees:
-                           if mention['M'] in Bots:
-                                  cl.sendText(msg.to,ret_)
-                                  cl.kickoutFromGroup(msg.to,[msg.from_])
-                                  break
-
         if op.type == 25:
             msg = op.message
 
@@ -1143,30 +1127,6 @@ def bot(op):
                         cl.sendText(msg.to,"(・ω・）")
                     else:
                         cl.sendText(msg.to,"(・ω・）")
-          elif msg.text in ["Kick on","Autokick:on","Responkick on","Responkick:on"]:
-                if wait["kickMention"] == True:
-	            if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"ヽ(・∀・)ノ")
-		    else:
-                        cl.sendText(msg.to,"ヽ(・∀・)ノ")
-                else:
-		    if wait["kickMention"] = True
-                    if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"ヽ(・∀・)ノ")
-		    else:
-                        cl.sendText(msg.to,"ヽ(・∀・)ノ")
-            elif msg.text in ["Kick off","Autokick:off","Responkick off","Responkick:off"]:
-                if wait["kickMention"] == False:
-	            if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"(・ω・）")
-		    else:
-                        cl.sendText(msg.to,"(・ω・）")
-                else:
-		    if wait["kickMention"] = False
-                    if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"(・ω・）")
-		    else:
-                        cl.sendText(msg.to,"(・ω・）")
             elif msg.text in ["Sensi on"]:
                 if wait["linkprotect"] == True:
                     if wait["lang"] == "JP":
@@ -1314,8 +1274,6 @@ def bot(op):
                 else: md+=" 「❧¢σитα¢т : (・ω・）」\n"
                 if wait["protect"] == True: md+=" 「❧нαя∂ : ヽ(・∀・)ノ」\n"
                 else: md+=" 「❧нαя∂ : (・ω・）」\n"
-                if wait["kickMention"] == True: md+=" 「❧кι¢ктαg : ヽ(・∀・)ノ」\n"
-                else: md+=" 「❧кι¢ктαg : (・ω・）」\n
                 if wait["linkprotect"] == True: md+=" 「❧ѕєиѕι : ヽ(・∀・)ノ」\n"
                 else: md+=" 「❧ѕєиѕι : (・ω・）」\n"
                 if wait["Protectjoin"] == True: md+=" 「❧кι¢кʝσιи : ヽ(・∀・)ノ」\n"
