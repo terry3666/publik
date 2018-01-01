@@ -2016,27 +2016,26 @@ def bot(op):
                     except Exception as e:
                         cl.sendText(msg.to, str(e))
 #----------------------------------------------
-            elif 'instagram ' in msg.text.lower():
-                try:
-                    instagram = msg.text.lower().replace("instagram ","")
-                    html = requests.get('https://www.instagram.com/' + instagram + '/?')
-                    soup = BeautifulSoup(html.text, 'html5lib')
-                    data = soup.find_all('meta', attrs={'property':'og:description'})
-                    text = data[0].get('content').split()
-                    data1 = soup.find_all('meta', attrs={'property':'og:image'})
-                    text1 = data1[0].get('content').split()
-                    user = "Name: " + text[-2] + "\n"
-                    user1 = "Username: " + text[-1] + "\n"
-                    followers = "Followers: " + text[0] + "\n"
-                    following = "Following: " + text[2] + "\n"
-                    post = "Post: " + text[4] + "\n"
-                    link = "Link: " + "https://www.instagram.com/" + instagram
-                    detail = "**INSTAGRAM INFO USER**\n"
-                    details = "\n**INSTAGRAM INFO USER**"
-                    cl.sendText(msg.to, detail + user + user1 + followers + following + post + link + details)
-                    cl.sendImageWithURL(msg.to, text1[0])
-                except Exception as njer:
-                	cl.sendText(msg.to, str(njer))
+            elif "Instagram " in msg.text:
+                    try:
+                        instagram = msg.text.replace("Instagram ","")
+                        response = requests.get("https://www.instagram.com/"+instagram+"?__a=1")
+                        data = response.json()
+                        namaIG = str(data['user']['full_name'])
+                        bioIG = str(data['user']['biography'])
+                        mediaIG = str(data['user']['media']['count'])
+                        verifIG = str(data['user']['is_verified'])
+                        usernameIG = str(data['user']['username'])
+                        followerIG = str(data['user']['followed_by']['count'])
+                        profileIG = data['user']['profile_pic_url_hd']
+                        privateIG = str(data['user']['is_private'])
+                        followIG = str(data['user']['follows']['count'])
+                        link = "Link: " + "https://www.instagram.com/" + instagram
+                        text = "Name : "+namaIG+"\nUsername : "+usernameIG+"\nBiography : "+bioIG+"\nFollower : "+followerIG+"\nFollowing : "+followIG+"\nPost : "+mediaIG+"\nVerified : "+verifIG+"\nPrivate : "+privateIG+"" "\n" + link
+                        cl.sendText(msg.to, str(text))
+                        cl.sendImageWithURL(msg.to, profileIG)
+                    except Exception as e:
+                        cl.sendText(msg.to, str(e))
 #----------------Commandtambahan----------------------#
             elif msg.text in ["List group","Glist"]:
               if msg.from_ in admin:
