@@ -16,28 +16,10 @@ from threading import Thread
 
 
 cl = LineAlpha.LINE()
-cl.login(token="EojQ8VQUWj0LzKACAUK2.WCCRkMNgQXINSOQNF/5yiG.HcBCwDzDvEbw8LVVUigLnoFsfe/kR/a/d/3PwzupMdI=")
+cl.login(token="EoCDHb00tDQtHuL7u5Gf.AzOxSrYUoRO+s8R0wGFDNW.JSKuvNmrA4a9kmBijc4MQNx1sqDySB9DJrKhTB67cI0=")
 cl.loginResult()
 
-kk = LineAlpha.LINE()
-kk.login(token="EoiIEWfkc7qQTS0dJk31.6FEeUgZiJRekuif7AJkoyq.gt2+awsufl1EsOAmBK3zjlINM/vV+inAQxh0NblP+T4=")
-kk.loginResult()
-
-ki = LineAlpha.LINE()
-ki.login(token="EohAynjFlp8OPN3IJgbc.WU1DIxPO+PMAGO5zAJJf+a.bvYwjSmdY9HcXix7kszYPlVtdzg/qb8n8VNJRXRXjDw=")
-ki.loginResult()
-
-kc = LineAlpha.LINE()
-kc.login(token="Eo2Ft59DtcPYkYTLsQc0.SIIDQHB+PWCP2bXYI9JK8a.RLcbBjPkfNmu00t934EYv8jSxpUgtyq09nLTV2sE18s=")
-kc.loginResult()
-
-ke = LineAlpha.LINE()
-ke.login(token="Eo6jMSNMvMQi8C8NIqU2.zz02fzUHgHMt43YFBMIUuG.pH6og4n4U6ICCLMJZTN0b7VX3HcY480LacDrKwWeZuU=")
-ke.loginResult()
-
-kb = LineAlpha.LINE()
-kb.login(token="EodtgRca4b1EhJQ62USc.iPVblK8oEfqifUIij+vu7a.hIegb+c/fZqn7dHkXMkcQCM0AJY4d1TenrC7RA7GHqQ=")
-kb.loginResult()
+kk = ki = kc = ke = kb = cl
 
 print "login success"
 reload(sys)
@@ -110,12 +92,7 @@ wait = {
     "UpdateName":True,
     "protect":False,
     "dblack":False,
-    "cName":"ℱe̮̟͈̣̖̰̩̹͈̾ͨ̑͑r̼̯̤̗̲̞̥̈ͭ̃ͨ̆i̞̟̫̺ͭ̒ͭͣa̘̫͈̭͌͛͌̇̇̍n͉̠̙͉̗̺̋̔ͧ̊t̘̟̼̉̈́͐͋͌̊o̜̓̇ͫ̉͊ͨy͉̝͖̻̯ͮ̒̂ͮ͋ͫͨp̱̱̬̻̞̩͎̌ͦ̏ͪ͋̚",
-    "cName2":"ParryV10",
-    "cName3":"RakkoV10",
-    "cName4":"ElizaV10",
-    "cName5":"んんKickerんん",
-    "cName6":"Doctor.A",
+    "cName":"Publik",
     "blacklist":{},
     "wblacklist":False,
     "dblacklist":False,
@@ -759,7 +736,7 @@ def bot(op):
                            if mention['M'] in Bots:
                                   cl.sendText(msg.to,ret_)
                                   break
-        if op.type == 25:
+        if op.type == 26:
             msg = op.message
 
 
@@ -769,7 +746,7 @@ def bot(op):
             if msg.contentType == 16:
                 url = msg.contentMetadata("line://home/post?userMid="+mid+"&postId="+"new_post")
                 cl.like(url[25:58], url[66:], likeType=1001)
-        if op.type == 25:
+        if op.type == 26:
             msg = op.message
             if msg.contentType == 13:
                if wait["wblack"] == True:
@@ -2001,26 +1978,6 @@ def bot(op):
                 profile = cl.getProfile()
                 profile.displayName = wait["cName"]
                 cl.updateProfile(profile)
-
-                profile = ki.getProfile()
-                profile.displayName = wait["cName2"]
-                kk.updateProfile(profile)
-
-                profile = kk.getProfile()
-                profile.displayName = wait["cName3"]
-                kk.updateProfile(profile)
-
-                profile = kc.getProfile()
-                profile.displayName = wait["cName4"]
-                kc.updateProfile(profile)
-		
-                profile = ke.getProfile()
-                profile.displayName = wait["cName5"]
-                ke.updateProfile(profile)
-
-                profile = kb.getProfile()
-                profile.displayName = wait["cName6"]
-                kb.updateProfile(profile)
 #------------------------------------------------------------------
             elif msg.text in ["Ban"]:
                 wait["wblacklist"] = True
@@ -2130,26 +2087,6 @@ def nameUpdate():
                 profile = cl.getProfile()
                 profile.displayName = wait["cName"]
                 cl.updateProfile(profile)
-
-                profile2 = ki.getProfile()
-                profile2.displayName = wait["cName2"]
-                ki.updateProfile(profile2)
-
-                profile3 = kk.getProfile()
-                profile3.displayName = wait["cName3"]
-                kk.updateProfile(profile3)
-
-                profile4 = kc.getProfile()
-                profile4.displayName = wait["cName4"]
-                kc.updateProfile(profile4)
-		
-                profile5 = ke.getProfile()
-                profile5.displayName = wait["cName5"]
-                ke.updateProfile(profile5)
-
-                profile6 = kb.getProfile()
-                profile6.displayName = wait["cName6"]
-                kb.updateProfile(profile6)
             time.sleep(600)
         except:
             pass
