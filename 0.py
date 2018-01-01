@@ -85,6 +85,7 @@ helpMessage =""" 「ѕєℓf ¢σммαи∂」
 「яєѕρσи σи/σff」
 「¢ℓєαя вαи」
 「ѕυммσи」
+「нαя∂ σи/σff」
 """
 KAC=[cl,ki,kk,kc,kb]
 mid = cl.getProfile().mid
@@ -939,6 +940,10 @@ def bot(op):
                 kb.sendText(msg.to, "F̳͉̼͉̙͔͈͕̂̉̇e̮̟͈̣̖̰̩̹͈̾ͨ̑͑r̼̯̤̗̲̞̥̈ͭ̃ͨ̆s̪̭̱̼̼̉̈́ͪ͋̽̚b͎̣̫͈̥̗͒͌̃͑̔̾ͅo̜̓̇ͫ̉͊ͨt̘̟̼̉̈́͐͋͌̊")
                 msg.contentMetadata = {'mid': mid}
                 kb.sendMessage(msg)
+            elif msg.text in ["Me"]:
+                msg.contentType = 13
+                msg.contentMetadata = {'mid': mid}
+                cl.sendMessage(msg)
             elif msg.text in ["Bot"]:
                 msg.contentType = 13
                 msg.contentMetadata = {'mid': Amid}
