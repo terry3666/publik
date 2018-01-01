@@ -1205,6 +1205,7 @@ def nameUpdate():
                 profile = cl.getProfile()
                 profile.displayName = wait["cName"]
                 cl.updateProfile(profile)
+            time.sleep(600)
         except:
             pass
 thread2 = threading.Thread(target=nameUpdate)
