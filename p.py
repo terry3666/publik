@@ -16,7 +16,7 @@ from threading import Thread
 
 
 cl = LineAlpha.LINE()
-cl.login(token="EoQcaVLj7N3vZRrdHXRd.wB8NjCljtCrIY76m7u8PRq.otYNPrZdKSHRo6fDwlLRDOfOedLeuOn7OAX629ddByE=")
+cl.login(token="EoYaGSdamgoniMTdjzXd.wB8NjCljtCrIY76m7u8PRq.lc2Cy8MnoP7AHEFCvFHYRnyS2cKtAOMeSNlw0XY8nr0=")
 cl.loginResult()
 
 print "login success"
@@ -898,7 +898,8 @@ def bot(op):
                 msgs+="\n═════════List Friend═════════\n\nTotal Friend : %i" % len(kontak)
                 cl.sendText(msg.to, msgs)
                 
-            elif msg.text in ["Listgroup"]:   
+            elif msg.text in ["Listgroup"]:
+              if msg.from_ in admin:
                 kontak = cl.getGroup(msg.to)
                 group = kontak.members
                 num=1
@@ -910,7 +911,6 @@ def bot(op):
                 cl.sendText(msg.to, msgs)
 #-----------------------------------------------
             elif msg.text in ["/leave"]:
-	      if msg.from_ in admin:
                 if msg.toType == 2:
                     ginfo = cl.getGroup(msg.to)
                     try:
@@ -921,6 +921,7 @@ def bot(op):
 #-----------------------------------------------
 #-----------------------------------------------
             elif "Spm " in msg.text:
+              if msg.from_ in admin:
                    txt = msg.text.split(" ")
                    jmlh = int(txt[2])
                    teks = msg.text.replace("Up "+str(txt[1])+" "+str(jmlh)+ " ","")
@@ -1056,6 +1057,7 @@ def bot(op):
                     t-=1
 #==============================================
             elif "Spamtag @" in msg.text:
+              if msg.from_ in admin:
                 _name = msg.text.replace("Spamtag @","")
                 _nametarget = _name.rstrip(' ')
                 gs = cl.getGroup(msg.to)
@@ -1094,6 +1096,7 @@ def bot(op):
 
      #-------------Fungsi Tag All Start---------------#
             elif msg.text in ["Summon"]:
+              if msg.from_ in admin:
                   group = cl.getGroup(msg.to)
                   nama = [contact.mid for contact in group.members]
 
