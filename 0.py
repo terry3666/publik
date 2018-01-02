@@ -2109,12 +2109,6 @@ def bot(op):
                for manusia in n:
                   cl.sendText(manusia, (bctxt))
                   
-            elif "Contact bc " in msg.text:
-               bctxt = msg.text.replace("Contact bc ", "")
-               t = cl.getAllContactIds()
-               for manusia in t:
-                  cl.sendText(manusia, (bctxt))
-                  
             elif msg.text in ["Gcreator"]:
               if msg.toType == 2:
                     msg.contentType = 13
