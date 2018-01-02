@@ -441,7 +441,7 @@ def summon(to, nama):
 def waktu(secs):
     mins, secs = divmod(secs,60)
     hours, mins = divmod(mins,60)
-    return '%02d нσυяѕ %02d мιиυтє %02d ѕє¢σи∂」' % (hours, mins, secs)      
+    return '「 %02d нσυяѕ %02d мιиυтє %02d ѕє¢σи∂」' % (hours, mins, secs)      
 
 def cms(string, commands): #/XXX, >XXX, ;XXX, ^XXX, %XXX, $XXX...
     tex = ["+","@","/",">",";","^","%","$","＾","サテラ:","サテラ:","サテラ：","サテラ："]
@@ -1474,7 +1474,7 @@ def bot(op):
 
             elif msg.text.lower() == 'runtime':
                 eltime = time.time() - mulai
-                van = "「вσт яυииιиg "+waktu(eltime)
+                van = "「вσт яυииιиg」\n"+waktu(eltime)
                 cl.sendText(msg.to,van)
 #------------------------------------------------------------#
                         
