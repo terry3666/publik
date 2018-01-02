@@ -1135,11 +1135,11 @@ def bot(op):
 #==============================================================================#
             elif "Fancytext: " in msg.text:
                 txt = msg.text.replace("Fancytext: ", "")
-                cl.kedapkedip(msg.to,txt)
+                cl.Kedapkedip(msg.to,txt)
                 print "[Command] Kedapkedip"
                 
-            elif "kedapkedip " in msg.text.lower():
-                txt = msg.text.replace("kedapkedip ", "")
+            elif "Kedapkedip " in msg.text.lower():
+                txt = msg.text.replace("Kedapkedip ", "")
                 t1 = "\xf4\x80\xb0\x82\xf4\x80\xb0\x82\xf4\x80\xb0\x82\xf4\x80\xb0\x82\xf4\x80\xa0\x81\xf4\x80\xa0\x81\xf4\x80\xa0\x81"
                 t2 = "\xf4\x80\x82\xb3\xf4\x8f\xbf\xbf"
                 cl.sendText(msg.to, t1 + txt + t2)
