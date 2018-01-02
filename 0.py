@@ -133,7 +133,7 @@ wait = {
     "atjointicket":True,
     "linkprotect":False,
     "protecteasy":True,
-    "detectMention":True,
+    "detectMention":False,
     }
 
 wait2 = {
