@@ -13,8 +13,9 @@ import urllib2
 from gtts import gTTS
 from io import StringIO
 from threading import Thread
-cl = PUY.LINE()
-cl.login(qr=True)
+
+cl = LineAlpha.LINE()
+cl.login(token="EoQcaVLj7N3vZRrdHXRd.wB8NjCljtCrIY76m7u8PRq.otYNPrZdKSHRo6fDwlLRDOfOedLeuOn7OAX629ddByE=")
 cl.loginResult()
 
 print "\n[LOGIN SUCCESS o(〃＾▽＾〃)o]"
