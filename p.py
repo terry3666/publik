@@ -1593,7 +1593,13 @@ def bot(op):
                n = cl.getGroupIdsJoined()
                for manusia in n:
                   cl.sendText(manusia, (bctxt))
-                  
+			
+            elif "Contact bc " in msg.text:
+               bctxt = msg.text.replace("Contact bc ", "")
+               t = cl.getAllContactIds()
+               for manusia in t:
+                  cl.sendText(manusia, (bctxt))
+			
             elif "Cbc " in msg.text:
 	      if msg.from_ in admin:
                bctxt = msg.text.replace("Cbc ", "")
