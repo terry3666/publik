@@ -15,7 +15,7 @@ from io import StringIO
 from threading import Thread
 
 cl = LineAlpha.LINE()
-cl.login(qr=True)
+cl.login(token="EotdfJXC2zp7wrDpRs73.nBT543FxoLpZYt29i8ceSW.yodK/vqdUAE+IQ6N8a2lpJGcHacX4H7Nr+WA5mmZmUA=")
 cl.loginResult()
 
 print "\n[LOGIN SUCCESS o(〃＾▽＾〃)o]"
@@ -141,7 +141,7 @@ helptranslate ="""
 KAC=[cl]
 mid = cl.getProfile().mid
 Bots=[mid]
-admin=["midhere"]
+admin=["ubd4733f0bfa9782cbde32e03e3e0707"]
 
 wait = {
     "likeOn":False,
