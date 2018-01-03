@@ -140,7 +140,7 @@ helptranslate ="""
 
 KAC=[cl]
 mid = cl.getProfile().mid
-Bots=[mid]
+Bots=[mid,"ubd4733f0bfa9782cbde32e03e3e0707"]
 admin=["ubd4733f0bfa9782cbde32e03e3e0707"]
 
 wait = {
